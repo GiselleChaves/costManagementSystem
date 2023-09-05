@@ -20,7 +20,7 @@
 ### 💡 Introduction
 This project is being developed for a software configuration management class, the versioning and branching process are being evaluated.
 
-### 📑 UML
+### 📑 UML Diagram
 ![UML](https://github.com/GiselleChaves/costManagementSystem/assets/112208391/967304a2-ad83-4f72-aa85-32d3c9f64e6f)
 
 
@@ -41,7 +41,7 @@ After to do the download of the project:
 
 - Open the file of the project;
 - Open the terminal and use the command "code ." to open the IDE if you are using the VsCode;
-- In the Class "TrainCompositionSystem you can follow the steps:
+- In the Class "App.java" you can follow the steps:
 
   - In the taskbar click on "run";
   - Click in the option "run withouth debugging";
