@@ -21,7 +21,8 @@
 This project is being developed for a software configuration management class, the versioning and branching process are being evaluated.
 
 ### 📑 UML
-![image](https://github.com/GiselleChaves/costManagementSystem/assets/112208391/d76ff677-256c-4e85-8f6b-f38771a15f6c)
+![UML](https://github.com/GiselleChaves/costManagementSystem/assets/112208391/967304a2-ad83-4f72-aa85-32d3c9f64e6f)
+
 
 
 ### :hammer: Project features
