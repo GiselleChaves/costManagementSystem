@@ -8,7 +8,7 @@ public class oTest {
         Categoria categ = Categoria.ServicosDeTerceiros; //
         Categoria categ1 = Categoria.ManutencaoDeBens; //
         Custo c1;
-        Custo c2;
+
         // Custo
 
         String Description = "Cafeeee";
