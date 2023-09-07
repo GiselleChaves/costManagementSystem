@@ -33,11 +33,18 @@ public class GerenciadorDeFuncionario {
     }
 
     public void deleteRecord() {
+       LinkedList <Custo> aux = new LinkedList<>();
         if (!vetorFuncionarios.isEmpty()) {
             vetorFuncionarios.removeLast();
+
         }
     }
 
+    public void imprime() {
+        for (Employee p: vetorFuncionarios) {
+            System.out.println(p);
+        }
+    }
     public void toStringSystem() {
         for (Employee funcionario : vetorFuncionarios) {
             System.out.println(funcionario.toString());

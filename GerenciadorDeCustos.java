@@ -27,6 +27,21 @@ public class GerenciadorDeCustos {
         }
     }
 
+    public Custo deleteAndPrint() {
+        if (!ListCusto.isEmpty()) {
+            Custo ultimoCusto = ListCusto.removeLast();
+            return ultimoCusto;
+        } else {
+            return null; // Retorna null se a lista estiver vazia
+        }
+    }
+
+    public void imprime() {
+        for (Custo p: ListCusto) {
+            System.out.println(p);
+        }
+    }
+
     public LinkedList<Custo> listarTodos() {
         return ListCusto;
     }

@@ -4,6 +4,10 @@ compras,
 vendas,
 expedicao,
 engenharia,
-producao
+producao;
+
+ public int size() {
+  return 0;
+ }
 }
 

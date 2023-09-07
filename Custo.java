@@ -6,13 +6,18 @@ public class Custo {
     private Categoria category;
     private LocalDateTime datahora;
 
+    private Interface metodos;
     private String descrição;
 
 
-    public Custo(String umaDescrição, Categoria category, double umcusto) {
+    public Custo(String umaDescrição, Interface umA, double umcusto) {
         this.custo = umcusto;
-        this.category = category;
+        this.metodos = umA;
         this.descrição = umaDescrição;
+    }
+
+    public Custo() {
+
     }
 
     public double getCusto() {
@@ -31,8 +36,8 @@ public class Custo {
         return descrição;
     }
 
-    public Categoria getOcusto() {
-        return category;
+    public Interface getMetodos() {
+        return metodos;
     }
 
     public LocalDateTime getDatahora() {
@@ -42,11 +47,24 @@ public class Custo {
 
     public String toString() {
         String msg = " ";
-        msg = "\n Descrição do custo : " + getDescrição() + " \n Setor que está vinculada a compra : " + getOcusto() + " \n Valor R$ Custo : " + getCusto() + " \n Data : " + getData() + "\n";
+        msg = "\n Descrição do custo : " + getDescrição() + " \n Setor que está vinculada a compra : " + getMetodos() + " \n Valor R$ Custo : " + getCusto() + " \n Data : " + getData() + "\n";
         return msg;
     }
 
-
+    public Department retornaCerto(int numero) {
+        switch (numero) {
+            case 1:
+                return Department.compras;
+            case 2:
+                return Department.vendas;
+            case 3:
+                return Department.expedicao;
+            case 4:
+                return Department.engenharia;
+            case 5:
+                return Department.producao;
+            default:
+                return null; // Retorna null se nenhum enum correspondente for encontrado
 
 
 /*
@@ -55,4 +73,4 @@ public class Custo {
         return  getCusto().compareTo(o.getCusto());
 
     }*/
-}
+}}}
