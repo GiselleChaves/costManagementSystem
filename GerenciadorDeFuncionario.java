@@ -4,8 +4,8 @@ public class GerenciadorDeFuncionario {
     private LinkedList<Employee> vetorFuncionarios;
     private static GerenciadorDeFuncionario instance = null;
 
-            GerenciadorDeFuncionario() {
-            vetorFuncionarios = new LinkedList<>();
+    GerenciadorDeFuncionario() {
+        vetorFuncionarios = new LinkedList<>();
     }
 
     public static GerenciadorDeFuncionario getInstance() {
@@ -33,18 +33,29 @@ public class GerenciadorDeFuncionario {
     }
 
     public void deleteRecord() {
-       LinkedList <Custo> aux = new LinkedList<>();
+        LinkedList<Custo> aux = new LinkedList<>();
         if (!vetorFuncionarios.isEmpty()) {
             vetorFuncionarios.removeLast();
 
         }
     }
 
+    public void chooseEmployee(int cod) {
+        for (Employee employee : vetorFuncionarios) {
+            if (employee.getRegister() == cod) System.out.println(employee);
+
+
+        }
+
+    }
+
+
     public void imprime() {
-        for (Employee p: vetorFuncionarios) {
+        for (Employee p : vetorFuncionarios) {
             System.out.println(p);
         }
     }
+
     public void toStringSystem() {
         for (Employee funcionario : vetorFuncionarios) {
             System.out.println(funcionario.toString());

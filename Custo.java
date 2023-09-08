@@ -1,3 +1,5 @@
+import jdk.jfr.Category;
+
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 
@@ -6,14 +8,15 @@ public class Custo {
     private Categoria category;
     private LocalDateTime datahora;
 
-    private Interface metodos;
+    private Department d1;
     private String descrição;
 
 
-    public Custo(String umaDescrição, Interface umA, double umcusto) {
+    public Custo(String umaDescrição,  Department d1,  double umcusto, Categoria c1) {
         this.custo = umcusto;
-        this.metodos = umA;
+        this.d1=d1;
         this.descrição = umaDescrição;
+        this.category=c1;
     }
 
     public Custo() {
@@ -36,18 +39,20 @@ public class Custo {
         return descrição;
     }
 
-    public Interface getMetodos() {
-        return metodos;
+    public Department getMetodos() {
+        return d1;
     }
 
     public LocalDateTime getDatahora() {
         return datahora;
     }
 
+    public Categoria getCategoria() {return category;}
+
 
     public String toString() {
         String msg = " ";
-        msg = "\n Descrição do custo : " + getDescrição() + " \n Setor que está vinculada a compra : " + getMetodos() + " \n Valor R$ Custo : " + getCusto() + " \n Data : " + getData() + "\n";
+        msg = "\n Descrição do custo : " + getDescrição()  + " \n Valor R$ Custo : " + getCusto() + " \n Setor que está vinculada a compra : " + getMetodos() + "\n Categoria de Custo :"+getCategoria()+" \n Data : " + getData() + "\n";
         return msg;
     }
 
@@ -67,10 +72,19 @@ public class Custo {
                 return null; // Retorna null se nenhum enum correspondente for encontrado
 
 
-/*
-    @Override
-    public int compareTo(Custo o) {
-        return  getCusto().compareTo(o.getCusto());
+}}
 
-    }*/
-}}}
+    public Categoria retornaTipoCerto(int numero) {
+        switch (numero) {
+            case 1:
+                return category.AquisicaoDeBens;
+            case 2:
+                return category.ManutencaoDeBens;
+            case 3:
+                return category.ServicosDeTerceiros;
+
+            default:
+                return null; // Retorna null se nenhum enum correspondente for encontrado
+
+        }}
+}
