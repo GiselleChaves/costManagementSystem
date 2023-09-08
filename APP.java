@@ -1,5 +1,9 @@
+import java.time.LocalDate;
+
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 public class APP {
@@ -10,7 +14,7 @@ public class APP {
         GerenciadorDeFuncionario gerFuncionario = GerenciadorDeFuncionario.getInstance();
 
         Department depart = Department.vendas;
-        LocalDateTime t1 = LocalDateTime.of(2022, 12, 30, 15, 0, 0);
+        LocalDate t1 = LocalDate.of(2022, 12, 30);
 
         Employee Empregado;
         Employee Empregado1;
@@ -27,9 +31,10 @@ public class APP {
             System.out.println("Escreva (1) para login : ");
             System.out.println("Escreva (2) para criar uma nova conta");
             System.out.println("Escreva (3) adicionar novo Custo no sistema:");
-            System.out.println("Escreva (4) caso queira vizualizar o custo total mensal :");
+            System.out.println("Escreva (4) vizualizar Custo por data:");
             System.out.println("Escreva (5)Listar ");
             System.out.println("Escreva (6) retorna excluir ultimo item e retornar :");
+            System.out.println("Escreva (7) SAIR :");
             opcao = in.nextInt();
 
             switch (opcao) {
@@ -68,8 +73,8 @@ public class APP {
                     System.out.println("Informe o custo do item : ");
                     double uniCusto = in.nextDouble();
 
-                    LocalDateTime agora = LocalDateTime.now();
-                    DateTimeFormatter formato = DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm:ss");
+                    LocalDate agora = LocalDate.now();
+                    DateTimeFormatter formato = DateTimeFormatter.ofPattern("dd/MM/yyyy ");
                     String dataHoraFormatada = agora.format(formato);
                     System.out.println("Data e Hora Atual: " + dataHoraFormatada);
 
@@ -89,11 +94,47 @@ public class APP {
                     break;
 
                 case 4:
-                    System.out.println("");
+                    System.out.println("informe o que será pedido AAAA/MM/AA : ");
+
+                    int a, b, c ;
+                    System.out.println("informe Ano inicio ");
+                    a = in.nextInt();
+                    System.out.println("informe mês Inicio : ");
+                    b = in.nextInt();
+                    System.out.println("informe dia inicio : ");
+                    c = in.nextInt();
+                    System.out.println(" " +gerCusto.DataInicio(a,b,c));
+                    System.out.println("informe o que será pedido AAAA/MM/AA : ");
+                     int afim, bfim, cfim;
+                    System.out.println("informe Ano fim ");
+                   afim = in.nextInt();
+                    System.out.println("informe Ano fim ");
+                    bfim = in.nextInt();
+                    System.out.println("informe Ano fim ");
+                    cfim = in.nextInt();
+                    System.out.println(" " +gerCusto.DataFim(afim, bfim, cfim));
+                    List<LocalDate> aux1 = new ArrayList<>();
+
+                    LocalDate fdate ;
+                    fdate=  gerCusto.DataInicio(a, b, c);
+                    LocalDate gdate ;
+                    gdate =    gerCusto.DataFim(afim, bfim, cfim);
+
+                   GerenciadorDeCustos.pesquisarPorPeriodo(aux1,fdate,gdate );
+
+               //     List<java.time.LocalDateTime> datas, LocalDateTime inicio, java.time.LocalDateTime fim
+
+                    System.out.println("informe Ano fim "+ GerenciadorDeCustos.pesquisarPorPeriodo(aux1,fdate,gdate ));
+
+
+
                     break;
 
                 case 5:
-                    System.out.println("");
+                    System.out.println("\n");
+                    gerCusto.deleteRecord();
+
+
                     break;
 
                 case 6:

@@ -1,43 +1,96 @@
 import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.LinkedList;
+import java.util.Scanner;
 
 public class oTest {
     public static void main(String[] args) {
         Department depart = Department.vendas; // Note que estou usando letras maiúsculas para a enumeração
         Categoria categ = Categoria.ServicosDeTerceiros; //
         Categoria categ1 = Categoria.ManutencaoDeBens; //
-        Custo c1;
-
+        Scanner in = new Scanner(System.in);
+        Custo newCusto = null;
         // Custo
+        GerenciadorDeCustos gerCusto = GerenciadorDeCustos.getInstance();
 
-        String Description = "Cafeeee";
-        double uniCusto = 200;
-        Custo newCusto;
+
+        System.out.println("Seja bem-vindo! Vamos criar uma conta para você. Por favor, escolha o seu departamento:");
+        System.out.println("compras (1)\n" + "vendas(2),\n" + "expedicao(3),\n" + "engenharia(4),\n" + "producao (5)");
+        int auxSetor = in.nextInt();
+
+
+        System.out.println("AquisicaoDeBens (1)\n" + "ManutencaoDeBens(2),\n" + "ServicosDeTerceiros(3),\n");
+        int CatAux = in.nextInt();
+        in.nextLine(); // Consumir a quebra de linha pendente
+        System.out.println("Informe a descrição do item : ");
+        String Description = in.nextLine();
+        System.out.println("Informe o custo do item : ");
+        double uniCusto = in.nextDouble();
+
+        LocalDate agora = LocalDate.now();
+        DateTimeFormatter formato = DateTimeFormatter.ofPattern("dd/MM/yyyy ");
+        String dataHoraFormatada = agora.format(formato);
+        System.out.println("Data e Hora Atual: " + dataHoraFormatada);
+
+        Department deAux = newCusto.retornaCerto(auxSetor);
+        Categoria cat = newCusto.retornaTipoCerto(CatAux);
+
+        newCusto = new Custo(Description, deAux, uniCusto, cat);
+        newCusto.setData(agora);
+
+        gerCusto.add(newCusto);
+        gerCusto.add(newCusto);
+        gerCusto.add(newCusto);
+        gerCusto.listarTodos();
+        gerCusto.imprime();
+
+        System.out.println("Item Adicionado: " + newCusto.toString());
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+
+/*
         //newCusto = new Custo(Description,categ, uniCusto);
         //
 
-        GerenciadorDeCustos gerCusto = GerenciadorDeCustos.getInstance();
-        LocalDateTime t1 = (LocalDateTime.of(2022, 12, 30, 15, 0, 0));
-        LocalDateTime t2 = (LocalDateTime.of(2023, 9, 9, 12, 0, 0));
 
-        //  c1 = new Custo("Cama", categ, 200);
-        //  c1.setData(t1);
 
         //    c2 = new Custo("cadeira", categ1, 300);
         //   c2.setData(t2);
 
-
+/*
         Employee Empregado = new Employee();
         Employee Empregado1 = new Employee();
         Employee Empregado2 = new Employee();
-
+/*
         GerenciadorDeFuncionario empregado = GerenciadorDeFuncionario.getInstance();
         Empregado = new Employee("Lucas", depart);
         Empregado1 = new Employee("Arthur", depart);
         Empregado2 = new Employee("Cindi", depart);
 
-
+/*
         GerenciadorDeCustos g1 = new GerenciadorDeCustos();
         GerenciadorDeFuncionario gereF = new GerenciadorDeFuncionario();
 

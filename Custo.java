@@ -1,12 +1,12 @@
 import jdk.jfr.Category;
 
-import java.time.LocalDateTime;
+import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 
 public class Custo {
     private double custo;
     private Categoria category;
-    private LocalDateTime datahora;
+    private LocalDate datahora;
 
     private Department d1;
     private String descrição;
@@ -27,11 +27,11 @@ public class Custo {
         return custo;
     }
 
-    public LocalDateTime getData() {
+    public LocalDate getData() {
         return datahora;
     }
 
-    public void setData(LocalDateTime data) {
+    public void setData(LocalDate data) {
         datahora = data;
     }
 
@@ -43,7 +43,7 @@ public class Custo {
         return d1;
     }
 
-    public LocalDateTime getDatahora() {
+    public LocalDate getDatahora() {
         return datahora;
     }
 

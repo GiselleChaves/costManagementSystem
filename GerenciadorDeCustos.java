@@ -2,9 +2,11 @@ import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.LinkedList;
 import java.time.LocalDate;
+import java.util.List;
 
 
 public class GerenciadorDeCustos {
+    public ArrayList<Custo> listarTodos;
     private LinkedList<Custo> ListCusto;
     private static GerenciadorDeCustos instance = null;
 
@@ -58,4 +60,47 @@ public class GerenciadorDeCustos {
         }
         return aux;
     }
+
+    public LocalDate DataInicio(int a, int b, int c){
+        LocalDate dataInicio = LocalDate.of(a,b,c);
+        return dataInicio;
+    }
+    public LocalDate DataFim(int a, int b, int c){
+        LocalDate dataFim = LocalDate.of(a,b,c);
+      return dataFim;
+    }
+
+    public static List<LocalDate> pesquisarPorPeriodo(List<LocalDate> datas, LocalDate inicio, LocalDate fim) {
+        List<LocalDate> datasNoPeriodo = new ArrayList<>();
+
+        for (LocalDate data : datas) {
+            if (data.isEqual(inicio) || (data.isAfter(inicio) && data.isBefore(fim))) {
+                datasNoPeriodo.add(data);
+            }
+        }
+
+        return datasNoPeriodo;
+    }
+
+    public LinkedList<LocalDate> GereLisData(LocalDate dataInicio, LocalDate dataFim) {
+        LinkedList<LocalDate> datasNoPeriodo = new LinkedList<>();
+
+        for (Custo elemento : ListCusto) {
+            LocalDate dataElemento = elemento.getData();
+
+            if (dataElemento.isAfter(dataInicio) && dataElemento.isBefore(dataFim)) {
+                datasNoPeriodo.add(dataElemento);
+            }
+        }
+
+        return datasNoPeriodo;
+    }
+
+
+
 }
+
+
+
+
+
