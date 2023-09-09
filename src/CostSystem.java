@@ -8,60 +8,60 @@ public class CostSystem {
   /**
    * 
    */
-  public void newCostRecord() {}
+  public void newCostRecord() {} //Nicolli
   
   /**
    * 
    */
-  public void chooseEmployee() {}
+  public void chooseEmployee() {}//Matheus
   
   /**
    * 
    */
-  public void findCostRecordByDate() {}
+  public void findCostRecordByDate() {}//Augusto
   
   /**
    * 
    */
-  public void findCostRecordByCategory() {}
+  public void findCostRecordByCategory() {}//Daniele
   
   /**
    * 
    */
-  public void findCostRecordByDepartment() {}
+  public void findCostRecordByDepartment() {}//Lucas
   
   /**
    * 
    */
-  public void deleteRecord() {}
+  public void deleteRecord() {}//Oliver
   
   /**
    * 
    */
-  public void employeeCurrentlyLoggedIn() {}
+  public void employeeCurrentlyLoggedIn() {}//Nicolli
   
   /**
    * 
    */
-  public void totalCostsForTheMonth() {}
+  public void totalCostsForTheMonth() {}//Matheus
   
   /**
    * 
    */
-  public void totalCostsForTheLast3Months() {}
+  public void totalCostsForTheLast3Months() {}//Augusto
   
   /**
    * 
    */
-  public void employeesWithHighestSumOfRecordedCosts() {}
+  public void employeesWithHighestSumOfRecordedCosts() {}//Daniele
   
   /**
    * 
    */
-  public void chooseFunctionality1() {}
+  public void chooseFunctionality1() {}//Lucas
   
   /**
    * 
    */
-  public void chooseFunctionality2() {}
+  public void chooseFunctionality2() {}//Oliver
 }
