@@ -1,9 +1,10 @@
-import java.util.LinkedList;
+import java.util.ArrayList;
+import java.util.List;
 
 public class CostSystem {
-  public static Object out;
-  LinkedList<Employee> employee = new LinkedList<>();
-  LinkedList<Department> department = new LinkedList<>();
+  //public static Object out;
+  private List<Employee> employee = new ArrayList<>();
+  private List<Department> department = new ArrayList<>();
 
   /**
    * 
@@ -64,4 +65,12 @@ public class CostSystem {
    * 
    */
   public void chooseFunctionality2() {}//Oliver
+
+  /**
+   * @return
+   */
+  public List<Employee> employeeList() { // Giselle
+    return employee;
+  }
+
 }
