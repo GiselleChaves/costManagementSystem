@@ -2,9 +2,32 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class CostSystem {
-  //public static Object out;
-  private List<Employee> employee = new ArrayList<>();
-  private List<Department> department = new ArrayList<>();
+  private List<Employee> employeeList;
+  private List<Department> departmentList;
+  //Company company = new Company();
+
+  public CostSystem() {
+    employeeList = new ArrayList<>();
+    departmentList = new ArrayList<>();
+  }
+
+  /**
+   * Method of adding employees to the register
+   * @param employee
+   */
+  public void addEmployee(Employee employee) {
+    this.employeeList.add(employee);
+  }
+
+  public void printEmployList() {
+    if(employeeList.isEmpty()) {
+      System.out.println("Empty Employee List!"); //Lista esta vazia
+    } else {
+      for(Employee employee : employeeList) {
+        System.out.println(employee.getName());
+      }
+    }
+  }
 
   /**
    * 
@@ -14,8 +37,24 @@ public class CostSystem {
   /**
    * 
    */
-  public void chooseEmployee() {}//Matheus
-  
+  public Employee chooseEmployee(String employee) {
+    for(Employee chosenEmployee : employeeList) {
+      if (chosenEmployee.getName().equals(employee)) {
+        return chosenEmployee; 
+        //break;
+      }else {
+        System.out.println("employee does not have a registration.");
+      }
+    }
+    return null;
+  }//Matheus
+
+  /**
+   * 
+   */
+  public void showEmployeeList() {//Matheus
+    employee.toString();
+  }
   /**
    * 
    */
@@ -72,5 +111,4 @@ public class CostSystem {
   public List<Employee> employeeList() { // Giselle
     return employee;
   }
-
 }

@@ -45,19 +45,19 @@ public class Employee {
   /**
    * @return
    */
-  public String getDepartment() {
+  public Department getDepartment() {
     return department;
   }
   
   /**
    * @param department
    */
-  public void setDepartment(String department) {
+  public void setDepartment(Department department) {
     this.department = department;
   }
 
   @Override
   public String toString() {
-    return "Employee [name=" + name + ", register=" + register + ", department=" + department + "]";
+    return "Employee: Name: " + name + ", Register: " + register + ", Department: " + department;
   }
 }

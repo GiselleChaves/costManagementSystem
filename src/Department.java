@@ -1,24 +1,26 @@
 public class Department {
-  private String deparmentName;
+  private Department deparmentName;
 
   /**
    * @param deparmentName
    */
-  public Department(String deparmentName) {
-    this.deparmentName = deparmentName;
+  public Department(Department deparmentName) {
+    if(this.deparmentName == null) {
+      this.deparmentName = new Department(deparmentName);
+    }
   }
 
   /**
    * @return
    */
-  public String getDeparmentName() {
+  public Department getDeparmentName() {
     return deparmentName;
   }
 
   /**
    * @param departmentName
    */
-  public void setDeparmentName(String deparmentName) {
+  public void setDeparmentName(Department deparmentName) {
     this.deparmentName = deparmentName;
   }
 }
