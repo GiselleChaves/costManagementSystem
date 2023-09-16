@@ -42,12 +42,19 @@ public class CostSystem {
       if (chosenEmployee.getName().equals(employee)) {
         return chosenEmployee; 
         //break;
-      }else {
-        System.out.println("employee does not have a registration.");
       }
     }
     return null;
   }//Matheus
+
+  public boolean isEmployeeRegitered(String employee) {
+    for(Employee chosenEmployee : employeeList) {
+      if (chosenEmployee.getName().equals(employee)) {
+        return true;
+      }
+    }
+    return false;
+  }
 
   /**
    * 

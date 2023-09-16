@@ -43,16 +43,26 @@ public class Menu {
       System.out.println("0 - To Finish Execution");
       System.out.println("");
       System.out.print("Choose an option above: ");
+
       option = in.nextInt();
+
       switch(option) {
-        case 1: System.out.println("Os funcionários cadastrados são:");
+        case 1:
+          System.out.println("");
+          System.out.println("-----------------------------------"); 
+          System.out.println("| Os funcionários cadastrados são: |");
+          System.out.println("-----------------------------------"); 
           system.printEmployList(); 
           System.out.println("");
           System.out.print("Choose an employee to be user:"); 
           String choosenEmployee = in.next();
           Employee employee = system.chooseEmployee(choosenEmployee);  
           System.out.println(""); 
-          System.out.println("Employee: " + choosenEmployee + " successfully selected" );
+          if(system.isEmployeeRegitered(choosenEmployee)) {
+            System.out.println("Employee: " + choosenEmployee + " successfully selected" );
+          } else {
+            System.out.println("Employee " + choosenEmployee + " does not have a registration.");
+          }
           break;
       }
     }while(option != 0);
