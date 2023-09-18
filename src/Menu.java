@@ -2,17 +2,15 @@ import java.util.Scanner;
 
 public class Menu {
   CostSystem system;
-  Company company;
-
+  
   public Menu() {
-    system = new CostSystem();
-    company = new Company();
+    system = new CostSystem;
   }
 
 
   //MOCK
   public void mock() {
-    system.addEmployee(new Employee("Ana", 23165420, "Financial"));
+    system.addEmployee(new Employee("Ana", 231654,"FINANCIAL"));
     system.addEmployee(new Employee("Carlos", 23101550, "IT"));
     system.addEmployee(new Employee("João", 23101550, "Accounting"));
     system.addEmployee(new Employee("Camila", 23101550, "Purchasing"));

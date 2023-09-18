@@ -1,12 +1,12 @@
 public class Employee {
   private String name;
   private int register;
-  String department;
+  private String department; 
 
   /**
    * @param name
    * @param register
-   * @param string
+   * @param Enum
    */
   public Employee(String name, int register, String department) {
     this.name = name;
