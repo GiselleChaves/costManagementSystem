@@ -32,8 +32,8 @@ public class Menu {
     do{
       System.out.println("\n1 - Choose Employee"); //Escolha Funcionário
       System.out.println("2 - Verify Employee Currently Logged In"); //Verifique o funcionário atualmente logado
-      System.out.println("3 - Verify Employees With Highest Sum Of Recorded Costs"); //verificar funcionários com maior soma de custos registrados
-      System.out.println("4 - Include Employee"); // incluir Funcionário
+      System.out.println("3 - Include Employee"); // incluir Funcionário
+      System.out.println("4 - Verify Employees With Highest Sum Of Recorded Costs"); //verificar funcionários com maior soma de custos registrados
       System.out.println("5 - Find Cost Record"); //Encontrar registro de custo
       System.out.println("6 - Delete Record"); //apagar registro
       System.out.println("7 - Verify Total Costs For The Month");//verificar os custos totais do mês
@@ -47,23 +47,42 @@ public class Menu {
       option = in.nextInt();
 
       switch(option) {
-        case 1:
-          System.out.println("");
-          System.out.println("-----------------------------------"); 
-          System.out.println("| Os funcionários cadastrados são: |");
-          System.out.println("-----------------------------------"); 
+        case 1: //Choose Employee
           system.printEmployList(); 
           System.out.println("");
-          System.out.print("Choose an employee to be user:"); 
+          System.out.print("Choose an employee to be user: "); 
           String choosenEmployee = in.next();
-          Employee employee = system.chooseEmployee(choosenEmployee);  
+          Employee employeeChoose = system.chooseEmployee(choosenEmployee);  
           System.out.println(""); 
-          if(system.isEmployeeRegitered(choosenEmployee)) {
-            System.out.println("Employee: " + choosenEmployee + " successfully selected" );
+
+          if(system.isEmployeeRegistered(choosenEmployee)) {
+            System.out.println(" >> Employee: " + choosenEmployee + " successfully selected" );
           } else {
-            System.out.println("Employee " + choosenEmployee + " does not have a registration.");
+            System.out.println(" >> Employee " + choosenEmployee + " does not have a registration.");
           }
           break;
+        case 2://Verify Employee Currently Logged In
+          break;
+        case 3://Include Employee
+          System.out.print("Inform the employee name: ");
+          String NameIncludeEmployee = in.next();
+          System.out.print("Inform the employee registry: ");
+          int registryIncludeEmployee = in.nextInt();
+          System.out.print("Inform the employee department: ");
+          String DepIncludeEmployee = in.next();
+
+          Employee employeeToBeIncluded = new Employee(NameIncludeEmployee, registryIncludeEmployee, DepIncludeEmployee);
+          System.out.println("");
+
+          if(!(system.isEmployeeRegistered(NameIncludeEmployee))) {
+            system.addEmployee(employeeToBeIncluded);
+            System.out.println(" >> Employee " + NameIncludeEmployee + " successfully registered" );
+            system.printEmployList();
+          } else {
+            System.out.println(" >> Employee " + NameIncludeEmployee + " already exist in the system.");
+          }
+          break;
+        case 4://Verify Employees With Highest Sum Of Recorded Costs
       }
     }while(option != 0);
   }
