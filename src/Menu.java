@@ -86,6 +86,9 @@ public class Menu {
           }
           break;
         case 4://Verify Employees With Highest Sum Of Recorded Costs
+          break;
+        case 6://delete record
+
       }
     }while(option != 0);
     in.close();
