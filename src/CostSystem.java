@@ -56,8 +56,10 @@ public class CostSystem {
   /**
    * 
    */
-  public void showEmployeeList() {//Matheus
-    //employee.toString();
+  public void showEmployeeList() {
+    for(Employee employee : employeeList) {
+      System.out.println(employee.getName());
+    }
   }
   /**
    * 
@@ -87,7 +89,12 @@ public class CostSystem {
   /**
    * 
    */
-  public void totalCostsForTheMonth() {}//Matheus
+  // public void totalCostsForTheMonth() {
+  //   float totalCosts = 0;
+  //   for(Employee employee : employeeList) {
+  //     totalCosts += employee.getTotalCosts();
+  //   }
+  // }//Matheus
   
   /**
    * 
