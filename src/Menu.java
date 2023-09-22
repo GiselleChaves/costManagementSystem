@@ -14,7 +14,7 @@ public class Menu {
   public void mock() {
     system.addEmployee(new Employee("Ana", 23165420, "Financial"));
     system.addEmployee(new Employee("Carlos", 23101550, "IT"));
-    system.addEmployee(new Employee("João", 23101550, "Accounting"));
+    system.addEmployee(new Employee("Maria", 23101550, "Accounting"));
     system.addEmployee(new Employee("Camila", 23101550, "Purchasing"));
     system.addEmployee(new Employee("Sandra", 23101550, "Financial"));
   }
@@ -47,12 +47,15 @@ public class Menu {
       option = in.nextInt();
 
       switch(option) {
+        case 0: 
+          System.out.println("");
         case 1: //Choose Employee
           system.printEmployList(); 
           System.out.println("");
           System.out.print("Choose an employee to be user: "); 
           String choosenEmployee = in.next();
-          Employee employeeChoose = system.chooseEmployee(choosenEmployee);  
+          //Employee employeeChoose = 
+          system.chooseEmployee(choosenEmployee);  
           System.out.println(""); 
 
           if(system.isEmployeeRegistered(choosenEmployee)) {
@@ -85,5 +88,6 @@ public class Menu {
         case 4://Verify Employees With Highest Sum Of Recorded Costs
       }
     }while(option != 0);
-  }
+    in.close();
+  }  
 }

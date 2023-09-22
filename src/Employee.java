@@ -40,21 +40,7 @@ public class Employee {
    */
   public void setRegister(int register) {
     this.register = register;
-  }
-  
-  /**
-   * @return
-   */
-  public Department getDepartment() {
-    return department;
-  }
-  
-  /**
-   * @param department
-   */
-  public void setDepartment(Department department) {
-    this.department = department;
-  }
+  }  
 
   @Override
   public String toString() {
