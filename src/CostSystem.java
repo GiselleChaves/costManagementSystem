@@ -42,7 +42,7 @@ public class CostSystem {
       break;
     }
     return null;
-  }//Matheus
+  }
 
   public boolean isEmployeeRegistered(String employee) {
     for(Employee chosenEmployee : employeeList) {
@@ -57,7 +57,8 @@ public class CostSystem {
    * 
    */
   public void showEmployeeList() {//Matheus
-    //employee.toString();
+    
+    employee.toString();
   }
   /**
    * 
@@ -102,17 +103,17 @@ public class CostSystem {
   /**
    * 
    */
-  public void chooseFunctionality1() {}//Lucas
+  public void chooseFunctionality1() {}//Arthur
   
   /**
    * 
    */
-  public void chooseFunctionality2() {}//Oliver
+  public void chooseFunctionality2() {}//Athur
 
   /**
    * @return
    */
-  /*public List<Employee> employeeList() { // Giselle
+  /*public List<Employee> employeeList() { 
     return employee;
   }*/
 }
