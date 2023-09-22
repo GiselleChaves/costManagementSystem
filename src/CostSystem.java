@@ -3,6 +3,7 @@ import java.util.List;
 
 public class CostSystem {
   private List<Employee> employeeList;
+  private List<CostRecord> costRecordList;
 
   public CostSystem() {
     employeeList = new ArrayList<>();
@@ -89,12 +90,16 @@ public class CostSystem {
   /**
    * 
    */
-  // public void totalCostsForTheMonth() {
-  //   float totalCosts = 0;
-  //   for(Employee employee : employeeList) {
-  //     totalCosts += employee.getTotalCosts();
-  //   }
-  // }//Matheus
+  public float totalCostsForTheMonth() {
+    return getTotalCosts();
+  }//Matheus
+
+  public int getTotalCosts() {
+    int totalCosts = 0;
+    for (int i=0; i < costRecordList.length; i++) {
+      totalCosts += costRecordList[i];
+    }
+  }//Matheus
   
   /**
    * 

@@ -42,11 +42,6 @@ public class Employee {
     this.register = register;
   }  
 
-  public int getTotalCosts() {
-    int totalCosts = 0;
-    totalCosts += Employee.newCostRecord();
-    return totalCosts;
-  }
 
   @Override
   public String toString() {
