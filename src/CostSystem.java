@@ -42,7 +42,7 @@ public class CostSystem {
       break;
     }
     return null;
-  }//Matheus
+  }
 
   public boolean isEmployeeRegistered(String employee) {
     for(Employee chosenEmployee : employeeList) {
@@ -56,8 +56,10 @@ public class CostSystem {
   /**
    * 
    */
-  public void showEmployeeList() {//Matheus
-    //employee.toString();
+  public void showEmployeeList() {
+    for(Employee employee : employeeList) {
+      System.out.println(employee.getName());
+    }
   }
   /**
    * 
@@ -87,7 +89,12 @@ public class CostSystem {
   /**
    * 
    */
-  public void totalCostsForTheMonth() {}//Matheus
+  // public void totalCostsForTheMonth() {
+  //   float totalCosts = 0;
+  //   for(Employee employee : employeeList) {
+  //     totalCosts += employee.getTotalCosts();
+  //   }
+  // }//Matheus
   
   /**
    * 
@@ -102,17 +109,17 @@ public class CostSystem {
   /**
    * 
    */
-  public void chooseFunctionality1() {}//Lucas
+  public void chooseFunctionality1() {}//Arthur
   
   /**
    * 
    */
-  public void chooseFunctionality2() {}//Oliver
+  public void chooseFunctionality2() {}//Athur
 
   /**
    * @return
    */
-  /*public List<Employee> employeeList() { // Giselle
+  /*public List<Employee> employeeList() { 
     return employee;
   }*/
 }

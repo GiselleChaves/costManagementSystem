@@ -14,7 +14,7 @@ public class Menu {
   public void mock() {
     system.addEmployee(new Employee("Ana", 23165420, "Financial"));
     system.addEmployee(new Employee("Carlos", 23101550, "IT"));
-    system.addEmployee(new Employee("Maria", 23101550, "Accounting"));
+    system.addEmployee(new Employee("Mariagit ", 23101550, "Accounting"));
     system.addEmployee(new Employee("Camila", 23101550, "Purchasing"));
     system.addEmployee(new Employee("Sandra", 23101550, "Financial"));
   }
