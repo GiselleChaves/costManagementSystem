@@ -30,12 +30,12 @@ public class CostSystem {
   /**
    * 
    */
-  public void newCostRecord() {} //Nicolli
+  public void newCostRecord() {} //Nicolli      giselle menu
   
   /**
    * 
    */
-  public Employee chooseEmployee(String employee) {
+  public Employee chooseEmployee(String employee) { //giselle menu
     for(Employee chosenEmployee : employeeList) {
       if (chosenEmployee.getName().equals(employee)) {
         return chosenEmployee; 
@@ -45,7 +45,7 @@ public class CostSystem {
     return null;
   }
 
-  public boolean isEmployeeRegistered(String employee) {
+  public boolean isEmployeeRegistered(String employee) {    //giselle menu
     for(Employee chosenEmployee : employeeList) {
       if (chosenEmployee.getName().equals(employee)) {
         return true;
@@ -57,7 +57,7 @@ public class CostSystem {
   /**
    * 
    */
-  public void showEmployeeList() {
+  public void showEmployeeList() {      //giselle menu
     for(Employee employee : employeeList) {
       System.out.println(employee.getName());
     }
@@ -65,31 +65,32 @@ public class CostSystem {
   /**
    * 
    */
-  public void findCostRecordByDate() {}//Augusto
+  public void findCostRecordByDate() {}//Augusto   giselle menu
   
   /**
    * 
    */
-  public void findCostRecordByCategory() {}//Daniele
+  public void findCostRecordByCategory() {}//Daniele    giselle menu
   
   /**
    * 
    */
-  public void findCostRecordByDepartment() {}//Lucas
+  public void findCostRecordByDepartment() {}//Lucas    giselle menu
   
   /**
    * 
    */
-  public void deleteRecord() {}//Oliver
+  public void deleteRecord() {}//Oliver      gustavo menu
   
   /**
    * 
    */
-  public void employeeCurrentlyLoggedIn() {}//Nicolli
+  public void employeeCurrentlyLoggedIn() {}//     giselle menu
   
   /**
    * 
    */
+<<<<<<< HEAD
   public float totalCostsForTheMonth() {
     return getTotalCosts();
   }//Matheus
@@ -100,26 +101,34 @@ public class CostSystem {
       totalCosts += costRecordList[i];
     }
   }//Matheus
+=======
+  // public void totalCostsForTheMonth() {     gustavo menu
+  //   float totalCosts = 0;
+  //   for(Employee employee : employeeList) {
+  //     totalCosts += employee.getTotalCosts();
+  //   }
+  // }//Matheus
+>>>>>>> 7070dcf1444ca8761242653c986d4426efc3df5e
   
   /**
    * 
    */
-  public void totalCostsForTheLast3Months() {}//Augusto
+  public void totalCostsForTheLast3Months() {}//Augusto      gustavo menu
   
   /**
    * 
    */
-  public void employeesWithHighestSumOfRecordedCosts() {}//Daniele
+  public void employeesWithHighestSumOfRecordedCosts() {}//Daniele    giselle menu
   
   /**
    * 
    */
-  public void chooseFunctionality1() {}//Arthur
+  public void chooseFunctionality1() {}//Arthur     gustavo menu
   
   /**
    * 
    */
-  public void chooseFunctionality2() {}//Athur
+  public void chooseFunctionality2() {}//Athur      gustavo menu
 
   /**
    * @return
