@@ -2,11 +2,9 @@ import java.util.Scanner;
 
 public class Menu {
   CostSystem system;
-  Company company;
 
   public Menu() {
     system = new CostSystem();
-    company = new Company();
   }
 
 
@@ -33,13 +31,15 @@ public class Menu {
       System.out.println("\n1 - Choose Employee"); //Escolha Funcionário
       System.out.println("2 - Verify Employee Currently Logged In"); //Verifique o funcionário atualmente logado
       System.out.println("3 - Include Employee"); // incluir Funcionário
-      System.out.println("4 - Verify Employees With Highest Sum Of Recorded Costs"); //verificar funcionários com maior soma de custos registrados
+      System.out.println("4 - Add Cost Record"); //Adicionar registro de custo
       System.out.println("5 - Find Cost Record"); //Encontrar registro de custo
-      System.out.println("6 - Delete Record"); //apagar registro
-      System.out.println("7 - Verify Total Costs For The Month");//verificar os custos totais do mês
-      System.out.println("8 - Verify Total Costs For The Last 3 Months");//verificar os custos totais dos últimos 3 meses
-      System.out.println("9 - Choose functionality1");
-      System.out.println("10 - Choose functionality1");
+      System.out.println("6 - Verify Employees With Highest Sum Of Recorded Costs"); //verificar funcionários com maior soma de custos registrados
+      System.out.println("7 - Find Cost Record"); //Encontrar registro de custo
+      System.out.println("8 - Delete Record"); //apagar registro
+      System.out.println("9 - Verify Total Costs For The Month");//verificar os custos totais do mês
+      System.out.println("10 - Verify Total Costs For The Last 3 Months");//verificar os custos totais dos últimos 3 meses
+      System.out.println("11 - Choose functionality1");
+      System.out.println("12 - Choose functionality1");
       System.out.println("0 - To Finish Execution");
       System.out.println("");
       System.out.print("Choose an option above: ");
@@ -48,15 +48,15 @@ public class Menu {
 
       switch(option) {
         case 0: 
-          System.out.println("");
+          System.out.println("Finished System");
+          break;
         case 1: //Choose Employee
           system.printEmployList(); 
           System.out.println("");
           System.out.print("Choose an employee to be user: "); 
           String choosenEmployee = in.next();
-          //Employee employeeChoose = 
           system.chooseEmployee(choosenEmployee);  
-          System.out.println(""); 
+          System.out.println(); 
 
           if(system.isEmployeeRegistered(choosenEmployee)) {
             System.out.println(" >> Employee: " + choosenEmployee + " successfully selected" );
@@ -65,6 +65,8 @@ public class Menu {
           }
           break;
         case 2://Verify Employee Currently Logged In
+          System.out.print(" >> Employee currently Logged in the System: " + system.employeeCurrentlyLoggedIn());
+          System.out.println();
           break;
         case 3://Include Employee
           System.out.print("Inform the employee name: ");
@@ -85,9 +87,34 @@ public class Menu {
             System.out.println(" >> Employee " + NameIncludeEmployee + " already exist in the system.");
           }
           break;
-        case 4://Verify Employees With Highest Sum Of Recorded Costs
+        case 4://Add Cost Record
+          Employee employeeAux;
+          System.out.println("To add a new Cost Record inform: ");
+          System.out.print("Inform the employee name: ");
+          String employeeName = in.next();
+          if(system.isEmployeeRegistered(employeeName)) {
+            employeeAux = system.chooseEmployee(employeeName);
+            String department = employeeAux.getDepartament(); 
+            //EMPLOYEEAUX É TIPO EMPLOYEE, MAS DEPARTAMENTO É TIPO STRING, NÃO PODE APLICAR, E STRING DEPARTMENT NÃO PODE RECEBER TIPO EMPLOYEE
+            String employeeRegister = employeeAux.getRegister();
+            //EMPLOYEEAUX É TIPO EMPLOYEE, MAS REGISTER É TIPO STRING, NÃO PODE APLICAR, E STRING DEPARTMENT NÃO PODE RECEBER TIPO EMPLOYEE
+          }else {
+            System.out.print("Inform the employee department: ");
+            String department = in.next();
+            System.out.print("Inform the employee register: ");
+            String employeeRegister = in.next();
+          }
+          System.out.print("Inform the cost value: ");
+          double value = in.nextDouble();
+          System.out.print("Inform the month of the cost: ");
+          String month = in.next();
+          System.out.print("Inform the description: ");
+          String description = in.next();
+          System.out.print("Inform the cost category: ");
+          String category = in.next();
+          system.newCostRecord();
           break;
-        case 6://delete record
+        case 5://delete record
 
       }
     }while(option != 0);
