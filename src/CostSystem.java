@@ -90,7 +90,6 @@ public class CostSystem {
   /**
    * 
    */
-<<<<<<< HEAD
   public float totalCostsForTheMonth() {
     return getTotalCosts();
   }//Matheus
@@ -100,15 +99,7 @@ public class CostSystem {
     for (int i=0; i < costRecordList.length; i++) {
       totalCosts += costRecordList[i];
     }
-  }//Matheus
-=======
-  // public void totalCostsForTheMonth() {     gustavo menu
-  //   float totalCosts = 0;
-  //   for(Employee employee : employeeList) {
-  //     totalCosts += employee.getTotalCosts();
-  //   }
-  // }//Matheus
->>>>>>> 7070dcf1444ca8761242653c986d4426efc3df5e
+  }//Matheus  
   
   /**
    * 
@@ -123,12 +114,48 @@ public class CostSystem {
   /**
    * 
    */
-  public void chooseFunctionality1() {}//Arthur     gustavo menu
+  //Funcionalidade escolhida 1
+  public double calculateAverageCostPerEmployee() {
+    if (employeeList.isEmpty() || costRecordList.isEmpty()) {
+      return 0;
+    }
+
+    double totalCost = 0;
+    for (int i = 0; i < costRecordList.size(); i++) {
+      CostRecord record = costRecordList.get(i);
+      totalCost += record.getCostValue();
+    }
+
+    double averageCost = totalCost / employeeList.size();
+    return averageCost;
+}
+//Arthur     gustavo menu
   
   /**
    * 
    */
-  public void chooseFunctionality2() {}//Athur      gustavo menu
+  //Funcionalidade escolhida 2
+  public int countEmployeesWithCostOver500() {
+    int count = 0;
+
+    for (Employee employee : employeeList) {
+        boolean hasCostOver500 = false;
+
+        for (CostRecord record : costRecordList) {
+            if (record.getCostValue() > 500) {
+                hasCostOver500 = true;
+                break;
+            }
+        }
+
+        if (hasCostOver500) {
+            count++;
+        }
+    }
+
+    return count;
+}
+//Arthur      gustavo menu
 
   /**
    * @return
