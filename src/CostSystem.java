@@ -127,8 +127,14 @@ public class CostSystem {
   /**
    * 
    */
-  public float totalCostsForTheMonth() {
-    return getTotalCosts();
+  public double totalCostsForTheMonth(CostRecord month) {
+    double totalCosts = 0;
+    for(CostRecord cr : costRecordList) {
+      if(cr.getMonth().equals(month)) {
+        totalCosts += cr.getValue();
+      }
+    }
+    return totalCosts;
   }//Matheus
 
 
