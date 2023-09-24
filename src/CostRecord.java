@@ -1,53 +1,70 @@
 //armazena todos os custos dos lançamentos dos funcionarios
 
 public class CostRecord {
-    private double costValue;
-    private String costDate;
-    private String costDescription;
-    private String costCategory;
-    private String costDepartament;
+    private int id = 0;
+    private String employeeRegister;
+    private double value;
+    private String month;
+    private String description;
+    private String category;
+    private String department;
 
-    public CostRecord(){
-
+    public CostRecord(int id, String employeeRegister, double value, String month, String description, String category, 
+                    String department){
+        this.id++;
+        this.employeeRegister = employeeRegister;
+        this.value = value;
+        this.month = month;
+        this.description = description;
+        this.category = category;
+        this.department = department;
     }
 
-    public double getCostValue() {
-        return costValue;
+    public int getId() {
+        return id;
     }
 
-    public void setCostValue(double costValue) {
-        this.costValue = costValue;
+    public String getEmployeeRegister() {
+        return employeeRegister;
     }
 
-    public String getCostDate() {
-        return costDate;
+    public double getValue() {
+        return value;
     }
 
-    public void setCostDate(String costDate) {
-        this.costDate = costDate;
+    public void setValue(double value) {
+        this.value = value;
     }
 
-    public String getCostDescription() {
-        return costDescription;
+    public String getMonth() {
+        return month;
     }
 
-    public void setCostDescription(String costDescription) {
-        this.costDescription = costDescription;
+    public void setMonth(String month) {
+        this.month = month;
     }
 
-    public String getCostCategory() {
-        return costCategory;
+    public String getDescription() {
+        return description;
     }
 
-    public void setCostCategory(String costCategory) {
-        this.costCategory = costCategory;
+    public void setDescription(String description) {
+        this.description = description;
     }
 
-    public String getCostDepartament() {
-        return costDepartament;
+    public String getCategory() {
+        return category;
     }
 
-    public void setCostDepartament(String costDepartament) {
-        this.costDepartament = costDepartament;
+    public void setCategory(String category) {
+        this.category = category;
+    }
+
+    public String getDepartament() {
+        return department;
+    }
+
+    public void setDepartament(String departament) {
+        this.department = departament;
     }
 }

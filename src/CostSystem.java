@@ -4,6 +4,7 @@ import java.util.List;
 public class CostSystem {
   private List<Employee> employeeList;
   private List<CostRecord> costRecordList;
+  Employee employeeSelected;
 
   public CostSystem() {
     employeeList = new ArrayList<>();
@@ -17,6 +18,9 @@ public class CostSystem {
     this.employeeList.add(employee);
   }
 
+  /**
+   * Method show the list of registered employees 
+   */
   public void printEmployList() {
     if(employeeList.isEmpty()) {
       System.out.println("Empty Employee List!"); //Lista esta vazia
@@ -28,12 +32,9 @@ public class CostSystem {
   }
 
   /**
-   * 
-   */
-  public void newCostRecord() {} //Nicolli      giselle menu
-  
-  /**
-   * 
+   * Method find and select the employee received by parameter 
+   * @param employee
+   * @return the employee selected
    */
   public Employee chooseEmployee(String employee) { //giselle menu
     for(Employee chosenEmployee : employeeList) {
@@ -45,6 +46,16 @@ public class CostSystem {
     return null;
   }
 
+  /**
+   * Return the employ currently Logged in the system
+   */
+  public Employee employeeCurrentlyLoggedIn() {
+    return employeeSelected;
+  }
+
+  /**
+   * Return a boolean value. True if is registered or false if not
+   */
   public boolean isEmployeeRegistered(String employee) {    //giselle menu
     for(Employee chosenEmployee : employeeList) {
       if (chosenEmployee.getName().equals(employee)) {
@@ -55,38 +66,64 @@ public class CostSystem {
   }
 
   /**
-   * 
+   * Show a list with all the employees registereds
    */
   public void showEmployeeList() {      //giselle menu
     for(Employee employee : employeeList) {
       System.out.println(employee.getName());
     }
   }
+
   /**
-   * 
+   * Method add a new cost record on the list costRecords
+   */
+  public void newCostRecord() {} //Nicolli      giselle menu
+  
+
+  /**
+   * Method find a cost record with the date received by parameter
+   * @param dataRecord
+   * @return the cost record with the date received by parameter
    */
   public void findCostRecordByDate() {}//Augusto   giselle menu
   
   /**
-   * 
+   * Method find a cost record with the date received by parameter
+   * @param category
+   * @return the cost record with the category received by parameter
    */
   public void findCostRecordByCategory() {}//Daniele    giselle menu
   
   /**
-   * 
+   * Method find a cost record with the department received by parameter
+   * @param department
+   * @return the cost record with the department received by parameter
    */
   public void findCostRecordByDepartment() {}//Lucas    giselle menu
   
   /**
-   * 
+   * Method find and delete a cost record with the id received by parameter
+   * @param department
+   * @return the cost record with the department received by parameter
    */
   public void deleteRecord() {}//Oliver      gustavo menu
   
+    
   /**
-   * 
+   * Method return the total value of cost records registereds
+   * @param costRecordList
+   * @return totalCosts
    */
-  public void employeeCurrentlyLoggedIn() {}//     giselle menu
-  
+  public double getTotalCosts() {
+    int totalCosts = 0;
+    for(CostRecord cr : costRecordList) {
+      if(cr.getMonth() != null){
+        totalCosts += cr.getValue();
+      }
+    }
+    return totalCosts;
+  }
+
   /**
    * 
    */
@@ -94,13 +131,7 @@ public class CostSystem {
     return getTotalCosts();
   }//Matheus
 
-  public int getTotalCosts() {
-    int totalCosts = 0;
-    for (int i=0; i < costRecordList.length; i++) {
-      totalCosts += costRecordList[i];
-    }
-  }//Matheus  
-  
+
   /**
    * 
    */
@@ -123,7 +154,7 @@ public class CostSystem {
     double totalCost = 0;
     for (int i = 0; i < costRecordList.size(); i++) {
       CostRecord record = costRecordList.get(i);
-      totalCost += record.getCostValue();
+      totalCost += record.getValue();
     }
 
     double averageCost = totalCost / employeeList.size();
@@ -142,7 +173,7 @@ public class CostSystem {
         boolean hasCostOver500 = false;
 
         for (CostRecord record : costRecordList) {
-            if (record.getCostValue() > 500) {
+            if (record.getValue() > 500) {
                 hasCostOver500 = true;
                 break;
             }
@@ -156,11 +187,4 @@ public class CostSystem {
     return count;
 }
 //Arthur      gustavo menu
-
-  /**
-   * @return
-   */
-  /*public List<Employee> employeeList() { 
-    return employee;
-  }*/
 }
