@@ -32,13 +32,13 @@ public class Menu {
       System.out.println("2 - Verify Employee Currently Logged In"); //Verifique o funcionário atualmente logado
       System.out.println("3 - Include Employee"); // incluir Funcionário
       System.out.println("4 - Add Cost Record"); //Adicionar registro de custo
-      System.out.println("5 - Delete Rerocr"); //Apagar registro
+      System.out.println("5 - Delete Record"); //Apagar registro
       System.out.println("6 - Verify Employees With Highest Sum Of Recorded Costs"); //verificar funcionários com maior soma de custos registrados
       System.out.println("7 - Find Cost Record"); //Encontrar registro de custo
       System.out.println("8 - Verify Total Costs For The Month");//verificar os custos totais do mês
       System.out.println("9 - Verify Total Costs For The Last 3 Months");//verificar os custos totais dos últimos 3 meses
       System.out.println("10 - Choose functionality1");
-      System.out.println("11 - Choose functionality1");
+      System.out.println("11 - Choose functionality2");
       System.out.println("0 - To Finish Execution");
       System.out.println("");
       System.out.print("Choose an option above: ");
@@ -116,6 +116,15 @@ public class Menu {
         case 5://delete record
           break;
         case 7://find cost record
+          break;
+        case 8://Verify Total Costs For The Month
+          break;
+        case 9://Verify Total Costs For The Last 3 Months
+          break;
+        case 10://Choose functionality1
+          break;
+        case 11://Choose functionality2
+          break;
 
       }
     }while(option != 0);
