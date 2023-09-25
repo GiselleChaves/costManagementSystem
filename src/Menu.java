@@ -115,6 +115,8 @@ public class Menu {
           system.newCostRecord();
           break;
         case 5://delete record
+          break;
+        case 7://find cost record
 
       }
     }while(option != 0);

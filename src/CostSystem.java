@@ -68,6 +68,13 @@ public class CostSystem {
     /**
      *
      */
+    public void findCostRecordByDescription(){
+
+    }
+
+    /**
+     *
+     */
     public void findCostRecordByDate() {
     }//Augusto   giselle menu
 
