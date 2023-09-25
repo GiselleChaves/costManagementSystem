@@ -74,13 +74,17 @@ public class CostSystem {
     /**
      *
      */
-    public void findCostRecordByCategory() {
+    public void findCostRecordByCategory(String targetCategory) {
+        System.out.println("Filtro por gasto por Categoria: ");
+
+        for (CostRecord cost : listCost) {
+            if (cost.getCategory().equalsIgnoreCase(targetCategory)) {
+                System.out.println("ID: " + cost.getId());
+            }
+        }
     }//Daniele    giselle menu
 
-    /**
-     *
-     */
-    p
+
 
     public void findCostRecordByDepartment(Department departmentToFind) {
         System.out.println("Filtro por Gasto por Departamento");
