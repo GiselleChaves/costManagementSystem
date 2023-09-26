@@ -2,9 +2,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class CostSystem {
-  private List<Employee> employeeList;
-  private List<CostRecord> costRecordList;
-  Employee employeeSelected;
+    private List<Employee> employeeList;
+    private List<CostRecord> costRecordList;
+    Employee employeeSelected;
 
   public CostSystem() {
     employeeList = new ArrayList<>();
@@ -162,7 +162,7 @@ public class CostSystem {
   /**
    * 
    */
-  public void employeesWithHighestSumOfRecordedCosts() {//Daniele    giselle menu
+  public void employeesWithHighestSumOfRecordedCosts() {//Daniele
     int maxRegister = -1;
     double maxSum = 0.0;
 
@@ -197,40 +197,36 @@ public class CostSystem {
     if (employeeList.isEmpty() || costRecordList.isEmpty()) {
       return 0;
     }
+  }
 
-    double totalCost = 0;
-    for (int i = 0; i < costRecordList.size(); i++) {
-      CostRecord record = costRecordList.get(i);
-      totalCost += record.getValue();
-    }
-
-    double averageCost = totalCost / employeeList.size();
-    return averageCost;
-}
 
   /**
    * 
    */
   public int countEmployeesWithCostOver500() {
     int count = 0;
+  }
 
-    for (Employee employee : employeeList) {
-        boolean hasCostOver500 = false;
+ 
+  /**
+   *
+   */
+  public void findCostRecordByDescription(){
 
-        for (CostRecord record : costRecordList) {
-            if (record.getValue() > 500) {
-                hasCostOver500 = true;
-                break;
-            }
-        }
+  }
 
-        if (hasCostOver500) {
-            count++;
-        }
+  /**
+   * @param departmentToFind
+   */
+  public void findCostRecordByDepartment(Department departmentToFind) {
+    System.out.println("Filtro por Gasto por Departamento");
+    for (CostRecord cost : costRecordList ) {
+      if (departmentToFind.equals(cost.getDepartament())) {
+          System.out.println(cost);
+      }
     }
+  }
 
-    return count;
-}
 
   /**
    * @param departmentToFind
