@@ -16,9 +16,14 @@ public class Department {
   }
 
   /**
-   * @param departmentName
+   * @param deparmentName
    */
   public void setDeparmentName(String deparmentName) {
     this.deparmentName = deparmentName;
   }
+
+  public Object getDepartmentName() {
+    return null;
+  }
 }
+
