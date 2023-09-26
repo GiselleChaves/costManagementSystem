@@ -87,7 +87,12 @@ public class CostSystem {
    */
   public void findCostRecordByDate(String month) {
     System.out.println("Filtro de gasto por data: ");
-  }//Augusto
+    for(CostRecord cost : costRecordList) {
+      if(cost.getMonth().equals(month)) {
+      }
+    }
+
+  }
 
   
   /**
