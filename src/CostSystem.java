@@ -86,7 +86,11 @@ public class CostSystem {
    * @return the cost record with the date received by parameter
    */
   public List<CostRecord> findCostRecordByDate(String targetDate) {
-    return null;
+    List<CostRecord> costRecordListAux = new ArrayList<>();
+    for(CostRecord cr : costRecordList) {
+      
+    }
+    return costRecordListAux;
   }
    
  
