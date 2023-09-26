@@ -85,15 +85,11 @@ public class CostSystem {
    * @param dataRecord
    * @return the cost record with the date received by parameter
    */
-  public void findCostRecordByDate(String month) {
-    System.out.println("Filtro de gasto por data: ");
-    for(CostRecord costRecord : costRecordList) {
-      if(costRecord.getMonth().equalsIgnoreCase(month)) {
-        System.out.println("ID: " + costRecord.getId());
-      }
-    }
+  public void findCostRecordByDate() {
+   
+ }
 
-  }
+  
 
   
   /**
@@ -165,7 +161,9 @@ public class CostSystem {
   /**
    * 
    */
-  public void totalCostsForTheLast3Months() {}//Augusto               gustavo menu
+  public void totalCostsForTheLast3Months() {
+   
+  }//Augusto               gustavo menu
   
   /**
    * 
