@@ -144,6 +144,11 @@ public class CostSystem {
         Map<Integer, Double> sumOfCostsByEmployee = listCost.stream()
                 .collect(Collectors.groupingBy(CostRecord::getEmployeeRegister,
                         Collectors.summingDouble(CostRecord::getValue)));
+
+        Map.Entry<Integer, Double> entry = sumOfCostsByEmployee.entrySet().stream()
+                .max(Map.Entry.comparingByValue())
+                .orElse(null);
+
     }
     //Daniele    giselle menu
 
