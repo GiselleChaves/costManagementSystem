@@ -23,7 +23,7 @@ public class CostSystem {
 
     for(CostRecord CostRecord : costRecordList){
       if(costRecord.getMonth().equalsIgnoreCase(month)){
-        System.out.println("ID: " + CostRecord);
+        System.out.println("ID: " + CostRecord.getId());
       }
     }
   }//Augusto
