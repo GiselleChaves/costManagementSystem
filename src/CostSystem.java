@@ -85,7 +85,9 @@ public class CostSystem {
    * @param dataRecord
    * @return the cost record with the date received by parameter
    */
-  public void findCostRecordByDate() {}//Augusto
+  public void findCostRecordByDate(String month) {
+    System.out.println("Filtro de gasto por data: ");
+  }//Augusto
 
   
   /**
