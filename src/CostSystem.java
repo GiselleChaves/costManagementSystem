@@ -89,7 +89,7 @@ public class CostSystem {
     System.out.println("Filtro de gasto por data: ");
     for(CostRecord costRecord : costRecordList) {
       if(costRecord.getMonth().equalsIgnoreCase(month)) {
-        System.out.println();
+        System.out.println("ID: " + costRecord.getId());
       }
     }
 
