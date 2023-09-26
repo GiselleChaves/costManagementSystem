@@ -29,7 +29,7 @@ public class CostSystem {
       }
     }
     return false;
-  }//Nicolli
+  }
 
   public void chooseEmployee() {}//Matheus
   
@@ -62,7 +62,7 @@ public class CostSystem {
     } else {
       System.out.println("No employees are currently logged in.");
     }
-  }//Nicolli
+  }
 
   public void loggedIn(Employee e) {
     loggedIn = e;
