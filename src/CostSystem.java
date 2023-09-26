@@ -85,9 +85,11 @@ public class CostSystem {
    * @param dataRecord
    * @return the cost record with the date received by parameter
    */
-  public void findCostRecordByDate() {
+  public List<CostRecord> findCostRecordByDate(String targetDate) {
+    return null;
+  }
    
- }
+ 
 
   
 
