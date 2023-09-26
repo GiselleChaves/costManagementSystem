@@ -5,4 +5,5 @@ public enum Department {
   private Department(String value){
     this.value = value;
   }
+
 }

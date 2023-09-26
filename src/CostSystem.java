@@ -56,7 +56,7 @@ public class CostSystem {
   /**
    * Return a boolean value. True if is registered or false if not
    */
-  public boolean isEmployeeRegistered(String employee) {    //giselle menu
+  public boolean isEmployeeRegistered(String employee) {
     for(Employee chosenEmployee : employeeList) {
       if (chosenEmployee.getName().equals(employee)) {
         return true;
@@ -68,7 +68,7 @@ public class CostSystem {
   /**
    * Show a list with all the employees registereds
    */
-  public void showEmployeeList() {      //giselle menu
+  public void showEmployeeList() { 
     for(Employee employee : employeeList) {
       System.out.println(employee.getName());
     }
@@ -77,7 +77,7 @@ public class CostSystem {
   /**
    * Method add a new cost record on the list costRecords
    */
-  public void newCostRecord() {} //Nicolli      giselle menu
+  public void newCostRecord() {} //Nicolli
   
 
   /**
@@ -85,28 +85,45 @@ public class CostSystem {
    * @param dataRecord
    * @return the cost record with the date received by parameter
    */
-  public void findCostRecordByDate() {}//Augusto   giselle menu
+  public void findCostRecordByDate() {}//Augusto
+
   
   /**
    * Method find a cost record with the date received by parameter
    * @param category
    * @return the cost record with the category received by parameter
    */
-  public void findCostRecordByCategory() {}//Daniele    giselle menu
+  public void findCostRecordByCategory(String targetCategory) {
+    System.out.println("Filtro por gasto por Categoria: ");
+
+      for (CostRecord cost : costRecordList) {
+        if (cost.getCategory().equalsIgnoreCase(targetCategory)) {
+          System.out.println("ID: " + cost.getId());
+        }
+      }
+  }
   
   /**
    * Method find a cost record with the department received by parameter
    * @param department
    * @return the cost record with the department received by parameter
    */
-  public void findCostRecordByDepartment() {}//Lucas    giselle menu
+  public CostRecord findCostRecordByDepartment(String department) {
+    CostRecord departmentAux = null;
+    for(CostRecord cr : costRecordList) {
+      if(cr.getDepartament().equals(department)) {
+        departmentAux = cr;
+      }
+    }
+    return departmentAux;
+  }
   
   /**
    * Method find and delete a cost record with the id received by parameter
    * @param department
    * @return the cost record with the department received by parameter
    */
-  public void deleteRecord() {}//Oliver      gustavo menu
+  public void deleteRecord() {}//Oliver
   
     
   /**
@@ -127,25 +144,55 @@ public class CostSystem {
   /**
    * 
    */
-  public float totalCostsForTheMonth() {
-    return getTotalCosts();
-  }//Matheus
-
-
-  /**
-   * 
-   */
-  public void totalCostsForTheLast3Months() {}//Augusto      gustavo menu
+  public double totalCostsForTheMonth(String month) {
+    double totalCosts = 0;
+    for(CostRecord cr : costRecordList) {
+      if(cr.getMonth().equals(month)) {
+        totalCosts += cr.getValue();
+      }
+    }
+    return totalCosts;
+  }
   
   /**
    * 
    */
-  public void employeesWithHighestSumOfRecordedCosts() {}//Daniele    giselle menu
+  public void totalCostsForTheLast3Months() {}//Augusto               gustavo menu
   
   /**
    * 
    */
-  //Funcionalidade escolhida 1
+  public void employeesWithHighestSumOfRecordedCosts() {//Daniele    giselle menu
+    int maxRegister = -1;
+    double maxSum = 0.0;
+
+    for (Employee employeeAux : employeeList) {
+      int register = employeeAux.getRegister();
+      String registerString = Integer.toString(register);
+      double sum = 0.0;
+
+    for (CostRecord cost : costRecordList) {
+        if (cost.getEmployeeRegister() == registerString) {
+            sum += cost.getValue();
+        }
+    }
+    if (sum > maxSum) {
+      maxSum = sum;
+      maxRegister = register;
+    }
+  }
+
+    for (Employee employee : employeeList) {
+      if (employee.getRegister() == maxRegister) {
+          System.out.println("Funcionário: " + employee.getName() + " - Registro: " + maxRegister + " - Soma dos Custos: " + maxSum);
+          break;
+      }
+    }
+  }
+
+  /**
+   * 
+   */
   public double calculateAverageCostPerEmployee() {
     if (employeeList.isEmpty() || costRecordList.isEmpty()) {
       return 0;
@@ -160,12 +207,10 @@ public class CostSystem {
     double averageCost = totalCost / employeeList.size();
     return averageCost;
 }
-//Arthur     gustavo menu
-  
+
   /**
    * 
    */
-  //Funcionalidade escolhida 2
   public int countEmployeesWithCostOver500() {
     int count = 0;
 
@@ -186,5 +231,36 @@ public class CostSystem {
 
     return count;
 }
-//Arthur      gustavo menu
+
+  /**
+   * @param departmentToFind
+   */
+  public void chooseFunctionality1(Department departmentToFind) {
+    System.out.println("Media De Gasto pelo Departamento");
+    int count = 0;
+    double total = 0;
+    double media = 0;
+    double mediaSemMaximoOUminimo = 0;
+    double min = 0;
+    double max = 0;
+
+    for (CostRecord cost : costRecordList) {
+      if (departmentToFind.equals(cost.getDepartament())) {
+        total = total + cost.getValue();
+        if (cost.getValue() > max) max = cost.getValue();
+        if (cost.getValue() < min) min = cost.getValue();
+
+        count++;
+      }
+    }
+    media = total / count;
+    mediaSemMaximoOUminimo = total - min - max;
+    mediaSemMaximoOUminimo = mediaSemMaximoOUminimo / count;
+    // Apresentão dos dados medias maximos e minimos por departament .
+    System.out.println("Valor Total Gasto por Departamento : " + total);
+    System.out.println("\nValor Medio de Gasto por Departamento : " + media);
+    System.out.println("\nValor medio descartando o valor max e min de Gasto do Departamento : " + mediaSemMaximoOUminimo);
+    System.out.println("\nValor da maior compra do Departamento : " + max);
+    System.out.println("\nValor da menor compra do Departamento  : " + min);
+  }
 }
