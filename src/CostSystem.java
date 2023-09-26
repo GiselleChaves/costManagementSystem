@@ -149,7 +149,12 @@ public class CostSystem {
                 .max(Map.Entry.comparingByValue())
                 .orElse(null);
 
-    }
+        if (entry != null) {
+            int maxRegister = entry.getKey();
+            double maxSum = entry.getValue();
+
+
+        }
     //Daniele    giselle menu
 
 
