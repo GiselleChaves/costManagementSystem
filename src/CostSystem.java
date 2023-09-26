@@ -68,6 +68,13 @@ public class CostSystem {
     /**
      *
      */
+    public void findCostRecordByDescription(){
+
+    }
+
+    /**
+     *
+     */
     public void findCostRecordByDate() {
     }//Augusto   giselle menu
 
@@ -77,7 +84,7 @@ public class CostSystem {
     public void findCostRecordByCategory(String targetCategory) {
         System.out.println("Filtro por gasto por Categoria: ");
 
-        for (CostRecord cost : listCost) {
+        for (CostRecord cost : costRecordList) {
             if (cost.getCategory().equalsIgnoreCase(targetCategory)) {
                 System.out.println("ID: " + cost.getId());
             }
@@ -87,8 +94,8 @@ public class CostSystem {
 
     public void findCostRecordByDepartment(Department departmentToFind) {
         System.out.println("Filtro por Gasto por Departamento");
-        for (Cost cost : listCost) {
-            if (departmentToFind.equals(cost.getDepartamento())) {
+        for (CostRecord cost : costRecordList ) {
+            if (departmentToFind.equals(cost.getDepartament())) {
                 System.out.println(cost);
             }
         }
@@ -186,15 +193,15 @@ public class CostSystem {
         int count = 0;
         double total = 0;
         double media = 0;
-        double :mediaSemMaximoOUminimo = 0;
+        double mediaSemMaximoOUminimo = 0;
         double min = 0;
         double max = 0;
 
-        for (Cost cost : listCost) {
-            if (departmentToFind.equals(cost.getDepartamento())) {
-                total = total + cost.getCusto();
-                if (cost.getCusto() > max) max = cost.getCusto;
-                if (cost.getCusto() < min) min = cost.getCusto;
+        for (CostRecord cost : costRecordList) {
+            if (departmentToFind.equals(cost.getDepartament())) {
+                total = total + cost.getValue();
+                if (cost.getValue() > max) max = cost.getValue();
+                if (cost.getValue() < min) min = cost.getValue();
 
                 count++;
             }
