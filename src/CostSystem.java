@@ -141,11 +141,13 @@ public class CostSystem {
      *
      */
     public void employeesWithHighestSumOfRecordedCosts() {
-    }//Daniele    giselle menu
+        Map<Integer, Double> sumOfCostsByEmployee = listCost.stream()
+                .collect(Collectors.groupingBy(CostRecord::getEmployeeRegister,
+                        Collectors.summingDouble(CostRecord::getValue)));
+    }
+    //Daniele    giselle menu
 
-    /**
-     *
-     */
+
   /*
   "Uma parte do trabalho foi designada para mim, mas acabei não percebendo que fiz
    o push para a minha branch principal (main) em vez da branch de desenvolvimento (developer).
