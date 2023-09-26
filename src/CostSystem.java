@@ -87,8 +87,9 @@ public class CostSystem {
    */
   public void findCostRecordByDate(String month) {
     System.out.println("Filtro de gasto por data: ");
-    for(CostRecord cost : costRecordList) {
-      if(cost.getMonth().equals(month)) {
+    for(CostRecord costRecord : costRecordList) {
+      if(costRecord.getMonth().equalsIgnoreCase(month)) {
+        System.out.println();
       }
     }
 
