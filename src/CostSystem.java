@@ -88,7 +88,9 @@ public class CostSystem {
   public List<CostRecord> findCostRecordByDate(String targetDate) {
     List<CostRecord> costRecordListAux = new ArrayList<>();
     for(CostRecord cr : costRecordList) {
-      
+      if(cr.getMonth().equalsIgnoreCase(targetDate)) {
+        costRecordListAux.add(cr);
+      }
     }
     return costRecordListAux;
   }
