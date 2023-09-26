@@ -2,6 +2,7 @@ import java.util.LinkedList;
 
 public class CostSystem {
   public static Object out;
+  private Employee loggedIn;
   LinkedList<Employee> employee = new LinkedList<>();
   LinkedList<Department> department = new LinkedList<>();
 
@@ -38,11 +39,18 @@ public class CostSystem {
   /**
    * 
    */
-  public void employeeCurrentlyLoggedIn() {}//Nicolli
-  
-  /**
-   * 
-   */
+  public void employeeCurrentlyLoggedIn(Employee e) {
+    if (loggedIn != null) {
+      System.out.println("Employee currently logged in: " + loggedIn.getName());
+    } else {
+      System.out.println("No employees are currently logged in.");
+    }
+  }//Nicolli
+
+  public void loggedIn(Employee e) {
+    loggedIn = e;
+  }
+
   public void totalCostsForTheMonth() {}//Matheus
   
   /**
