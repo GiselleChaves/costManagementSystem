@@ -140,30 +140,36 @@ public class CostSystem {
      *
      */
     public void employeesWithHighestSumOfRecordedCosts() {
-        Map<Integer, Double> sumOfCostsByEmployee = listCost.stream()
-                .collect(Collectors.groupingBy(CostRecord::getEmployeeRegister,
-                        Collectors.summingDouble(CostRecord::getValue)));
+        int maxRegister = -1;
+        double maxSum = 0.0;
 
-        Map.Entry<Integer, Double> entry = sumOfCostsByEmployee.entrySet().stream()
-                .max(Map.Entry.comparingByValue())
-                .orElse(null);
+        for (Employee employee : listEmployees) {
+            int register = employee.getRegister();
+            double sum = 0.0;
 
-        if (entry != null) {
-            int maxRegister = entry.getKey();
-            double maxSum = entry.getValue();
+            for (CostRecord cost : listCost) {
+                if (cost.getEmployeeRegister() == register) {
+                    sum += cost.getValue();
+                }
+            }
 
-            Employee employee = listEmployees.stream()
-                    .filter(e -> e.getRegister() == maxRegister)
-                    .findFirst()
-                    .orElse(null);
+            if (sum > maxSum) {
+                maxSum = sum;
+                maxRegister = register;
+            }
+        }
 
-            if (employee != null) {
+        for (Employee employee : listEmployees) {
+            if (employee.getRegister() == maxRegister) {
                 System.out.println("Funcionário: " + employee.getName() + " - Registro: " + maxRegister + " - Soma dos Custos: " + maxSum);
+                break;
             }
         }
     }
 
 }
+
+
     //Daniele    giselle menu
 
 
