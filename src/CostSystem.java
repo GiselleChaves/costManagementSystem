@@ -20,6 +20,12 @@ public class CostSystem {
    */
   public void findCostRecordByDate(String month) {
     System.out.println("Filtro de gasto por data:");
+
+    for(CostRecord CostRecord : costRecordList){
+      if(costRecord.getMonth(month)){
+        System.out.println("ID");
+      }
+    }
   }//Augusto
   
   /**
