@@ -85,7 +85,6 @@ public class CostSystem {
     }//Daniele    giselle menu
 
 
-
     public void findCostRecordByDepartment(Department departmentToFind) {
         System.out.println("Filtro por Gasto por Departamento");
         for (Cost cost : listCost) {
@@ -153,19 +152,29 @@ public class CostSystem {
             int maxRegister = entry.getKey();
             double maxSum = entry.getValue();
 
+            Employee employee = listEmployees.stream()
+                    .filter(e -> e.getRegister() == maxRegister)
+                    .findFirst()
+                    .orElse(null);
 
+            if (employee != null) {
+                System.out.println("Funcionário: " + employee.getName() + " - Registro: " + maxRegister + " - Soma dos Custos: " + maxSum);
+            }
         }
+    }
+
+}
     //Daniele    giselle menu
 
 
-  /*
-  "Uma parte do trabalho foi designada para mim, mas acabei não percebendo que fiz
-   o push para a minha branch principal (main) em vez da branch de desenvolvimento (developer).
-    Recebi feedback do Mateus de que ele havia revisado e estava tudo bem, no entanto,
-     o código não estava na branch de desenvolvimento. Agora percebi que outra pessoa assumiu a funcionalidade.
-      Estou preocupado que isso possa me prejudicar, já que era apenas um método simples. Portanto,
-      será criada uma terceira funcionalidade para o novo colega de trabalho. Por favor, faça as correções necessárias."
-  */
+    /*
+    "Uma parte do trabalho foi designada para mim, mas acabei não percebendo que fiz
+     o push para a minha branch principal (main) em vez da branch de desenvolvimento (developer).
+      Recebi feedback do Mateus de que ele havia revisado e estava tudo bem, no entanto,
+       o código não estava na branch de desenvolvimento. Agora percebi que outra pessoa assumiu a funcionalidade.
+        Estou preocupado que isso possa me prejudicar, já que era apenas um método simples. Portanto,
+        será criada uma terceira funcionalidade para o novo colega de trabalho. Por favor, faça as correções necessárias."
+    */
     public void chooseFunctionality1(Department departmentToFind) {
         System.out.println("Media De Gasto pelo Departamento");
         int count = 0;
