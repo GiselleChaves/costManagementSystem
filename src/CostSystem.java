@@ -82,7 +82,7 @@ public class CostSystem {
 
   /**
    * Method find a cost record with the date received by parameter
-   * @param dataRecord
+  // * @param dataRecord
    * @return the cost record with the date received by parameter
    */
   public List<CostRecord> findCostRecordByDate(String targetDate) {
@@ -102,7 +102,7 @@ public class CostSystem {
   
   /**
    * Method find a cost record with the date received by parameter
-   * @param category
+ //  * @param category
    * @return the cost record with the category received by parameter
    */
   public void findCostRecordByCategory(String targetCategory) {
@@ -132,7 +132,7 @@ public class CostSystem {
   
   /**
    * Method find and delete a cost record with the id received by parameter
-   * @param department
+  // * @param department
    * @return the cost record with the department received by parameter
    */
   public void deleteRecord() {}//Oliver
@@ -140,7 +140,7 @@ public class CostSystem {
     
   /**
    * Method return the total value of cost records registereds
-   * @param costRecordList
+ //  * @param costRecordList
    * @return totalCosts
    */
   public double getTotalCosts() {
@@ -211,6 +211,7 @@ public class CostSystem {
     if (employeeList.isEmpty() || costRecordList.isEmpty()) {
       return 0;
     }
+      return 0;
   }
 
 
@@ -219,6 +220,7 @@ public class CostSystem {
    */
   public int countEmployeesWithCostOver500() {
     int count = 0;
+    return count;
   }
 
  

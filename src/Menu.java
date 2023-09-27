@@ -18,7 +18,7 @@ public class Menu {
   }
   
 
-  public void menu() {    
+  public void menu() {
     mock();
     Scanner in = new Scanner(System.in);
     int option = 0;
@@ -93,9 +93,9 @@ public class Menu {
           String employeeName = in.next();
           if(system.isEmployeeRegistered(employeeName)) {
             employeeAux = system.chooseEmployee(employeeName);
-            String department = employeeAux.getDepartment(); 
+           // String department = employeeAux.getDepartment();
             //EMPLOYEEAUX É TIPO EMPLOYEE, MAS DEPARTAMENTO É TIPO STRING, NÃO PODE APLICAR, E STRING DEPARTMENT NÃO PODE RECEBER TIPO EMPLOYEE
-            String employeeRegister = employeeAux.getRegister();
+           // String employeeRegister = employeeAux.getRegister();
             //EMPLOYEEAUX É TIPO EMPLOYEE, MAS REGISTER É TIPO STRING, NÃO PODE APLICAR, E STRING DEPARTMENT NÃO PODE RECEBER TIPO EMPLOYEE
           }else {
             System.out.print("Inform the employee department: ");
@@ -116,6 +116,43 @@ public class Menu {
         case 5://delete record
           break;
         case 7://find cost record
+          int optionCostRecord = 0;
+          System.out.println("Please, select the method of search to find the cost record: ");
+          System.out.println("1-Find cost record by date");
+          System.out.println("2-Find cost record by description");
+          System.out.println("3-Find cost record by category");
+          System.out.println("4-Find cost record by departament");
+          System.out.println("0-Main menu");
+          optionCostRecord = in.nextInt();
+          switch (optionCostRecord){
+            case 1:
+              String wantedDate;
+              System.out.print("Please select the date you want to search: ");
+              wantedDate = in.nextLine();
+              System.out.println("\nTotal costs by this date:");
+              System.out.println(system.findCostRecordByDate(wantedDate));
+              break;
+            case 2:
+              String wantedDescription;
+              System.out.print("Please select the description you want to search: ");
+              wantedDescription = in.nextLine();
+              System.out.println("\nTotal costs by this description");
+              break;
+            case 3:
+              String wantedCategory;
+              System.out.print("Please select the category you want to search: ");
+              wantedCategory = in.nextLine();
+              System.out.println("\nTotal costs by this category");
+             System.out.println(system.findCostRecordByCategory(wantedCategory));
+              break;
+            case 4:
+              String wantedDepartament;
+              System.out.print("Please select the departament you want to search: ");
+              wantedDepartament = in.nextLine();
+              System.out.println("\nTotal costs by this departament");
+              System.out.println(system.findCostRecordByDepartment(wantedDepartament));
+
+          }
           break;
         case 8://Verify Total Costs For The Month
           break;
