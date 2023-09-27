@@ -179,7 +179,7 @@ public class CostSystem {
   /**
    * 
    */
-  public void employeesWithHighestSumOfRecordedCosts() {//Daniele
+  public Employee employeesWithHighestSumOfRecordedCosts() {//Daniele
     int maxRegister = -1;
     double maxSum = 0.0;
 
