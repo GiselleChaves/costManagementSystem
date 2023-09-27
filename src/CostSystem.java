@@ -115,15 +115,27 @@ public class CostSystem {
 
   /**
    * Method find a cost record with the date received by parameter
-   * @param dataRecord
+  // * @param dataRecord
    * @return the cost record with the date received by parameter
    */
-  public void findCostRecordByDate() {}//Augusto
+  public List<CostRecord> findCostRecordByDate(String targetDate) {
+    List<CostRecord> costRecordListAux = new ArrayList<>();
+    for(CostRecord cr : costRecordList) {
+      if(cr.getMonth().equalsIgnoreCase(targetDate)) {
+        costRecordListAux.add(cr);
+      }
+    }
+    return costRecordListAux;
+  }
+   
+ 
+
+  
 
   
   /**
    * Method find a cost record with the date received by parameter
-   * @param category
+ //  * @param category
    * @return the cost record with the category received by parameter
    */
   public void findCostRecordByCategory(String targetCategory) {
@@ -153,7 +165,7 @@ public class CostSystem {
   
   /**
    * Method find and delete a cost record with the id received by parameter
-   * @param department
+  // * @param department
    * @return the cost record with the department received by parameter
    */
   public void deleteRecord() {}//Oliver
@@ -161,7 +173,7 @@ public class CostSystem {
     
   /**
    * Method return the total value of cost records registereds
-   * @param costRecordList
+ //  * @param costRecordList
    * @return totalCosts
    */
   public double getTotalCosts() {
@@ -190,7 +202,9 @@ public class CostSystem {
   /**
    * 
    */
-  public void totalCostsForTheLast3Months() {}//Augusto               gustavo menu
+  public void totalCostsForTheLast3Months() {
+   
+  }//Augusto               gustavo menu
   
   /**
    * 
@@ -230,6 +244,7 @@ public class CostSystem {
     if (employeeList.isEmpty() || costRecordList.isEmpty()) {
       return 0;
     }
+      return 0;
   }
 
 
@@ -238,6 +253,7 @@ public class CostSystem {
    */
   public int countEmployeesWithCostOver500() {
     int count = 0;
+    return count;
   }
 
  
