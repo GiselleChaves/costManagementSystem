@@ -123,6 +123,7 @@ public class Menu {
           System.out.println("3-Find cost record by category");
           System.out.println("4-Find cost record by departament");
           System.out.println("0-Main menu");
+          System.out.print("Option: ");
           optionCostRecord = in.nextInt();
           switch (optionCostRecord){
             case 1:
@@ -131,19 +132,23 @@ public class Menu {
               wantedDate = in.nextLine();
               System.out.println("\nTotal costs by this date:");
               System.out.println(system.findCostRecordByDate(wantedDate));
+              System.out.println();
               break;
             case 2:
               String wantedDescription;
               System.out.print("Please select the description you want to search: ");
               wantedDescription = in.nextLine();
               System.out.println("\nTotal costs by this description");
+
+              System.out.println();
               break;
             case 3:
               String wantedCategory;
               System.out.print("Please select the category you want to search: ");
               wantedCategory = in.nextLine();
               System.out.println("\nTotal costs by this category");
-             System.out.println(system.findCostRecordByCategory(wantedCategory));
+              //System.out.println(system.findCostRecordByCategory(wantedCategory));
+              System.out.println();
               break;
             case 4:
               String wantedDepartament;
@@ -151,12 +156,21 @@ public class Menu {
               wantedDepartament = in.nextLine();
               System.out.println("\nTotal costs by this departament");
               System.out.println(system.findCostRecordByDepartment(wantedDepartament));
-
+              System.out.println();
+              break;
+            case 0:
+              break;
           }
           break;
         case 8://Verify Total Costs For The Month
+          String wantedMonth;
+          System.out.print("Please select the month you want to consult: ");
+          wantedMonth = in.nextLine();
+          System.out.println(system.totalCostsForTheMonth(wantedMonth));
+          System.out.println();
           break;
         case 9://Verify Total Costs For The Last 3 Months
+
           break;
         case 10://Choose functionality1
           break;
