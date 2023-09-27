@@ -237,13 +237,16 @@ public class CostSystem {
   /**
    * @param departmentToFind
    */
-  public void findCostRecordByDepartment(Department departmentToFind) {
-    System.out.println("Filtro por Gasto por Departamento");
+  public CostRecord findCostRecordByDepartment(Department departmentToFind) {
+   // System.out.println("Filtro por Gasto por Departamento");
+    CostRecord categoryAux = null;
     for (CostRecord cost : costRecordList ) {
       if (departmentToFind.equals(cost.getDepartament())) {
-          System.out.println(cost);
+         // System.out.println(cost);
+        categoryAux = cost;
       }
     }
+    return categoryAux;
   }
 
 
