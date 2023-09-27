@@ -106,14 +106,16 @@ public class CostSystem {
  //  * @param category
    * @return the cost record with the category received by parameter
    */
-  public void findCostRecordByCategory(String targetCategory) {
-    System.out.println("Filtro por gasto por Categoria: ");
-
+  public CostRecord findCostRecordByCategory(String targetCategory) {
+   // System.out.println("Filtro por gasto por Categoria: ");
+      CostRecord categoryAux = null;
       for (CostRecord cost : costRecordList) {
         if (cost.getCategory().equalsIgnoreCase(targetCategory)) {
-          System.out.println("ID: " + cost.getId());
+       //   System.out.println("ID: " + cost.getId());
+          categoryAux = cost;
         }
       }
+      return categoryAux;
   }
   
   /**

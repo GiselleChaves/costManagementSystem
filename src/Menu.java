@@ -147,7 +147,7 @@ public class Menu {
               System.out.print("Please select the category you want to search: ");
               wantedCategory = in.nextLine();
               System.out.println("\nTotal costs by this category");
-              //System.out.println(system.findCostRecordByCategory(wantedCategory));
+              System.out.println(system.findCostRecordByCategory(wantedCategory));
               System.out.println();
               break;
             case 4:
