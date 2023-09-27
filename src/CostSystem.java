@@ -8,6 +8,7 @@ public class CostSystem {
 
   public CostSystem() {
     employeeList = new ArrayList<>();
+    costRecordList = new ArrayList<>();
   }
 
   /**
