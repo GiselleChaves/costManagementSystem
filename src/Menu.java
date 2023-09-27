@@ -1,20 +1,20 @@
 import java.util.Scanner;
 
 public class Menu {
-  CostSystem system;
+  CostSystem cost;
 
   public Menu() {
-    system = new CostSystem();
+    cost = new CostSystem();
   }
 
 
   //MOCK
   public void mock() {
-    system.addEmployee(new Employee("Ana", 23165420, "Financial"));
-    system.addEmployee(new Employee("Carlos", 23101550, "IT"));
-    system.addEmployee(new Employee("Mariagit ", 23101550, "Accounting"));
-    system.addEmployee(new Employee("Camila", 23101550, "Purchasing"));
-    system.addEmployee(new Employee("Sandra", 23101550, "Financial"));
+    cost.addEmployee(new Employee("Ana", 23165420, "Financial"));
+    cost.addEmployee(new Employee("Carlos", 23101550, "IT"));
+    cost.addEmployee(new Employee("Mariagit ", 23101550, "Accounting"));
+    cost.addEmployee(new Employee("Camila", 23101550, "Purchasing"));
+    cost.addEmployee(new Employee("Sandra", 23101550, "Financial"));
   }
   
 
@@ -25,7 +25,7 @@ public class Menu {
     
     System.out.println();
     System.out.println("------------------------------------------");
-    System.out.println("Welcome to the Cost System Menu");
+    System.out.println("Welcome to the Cost cost Menu");
     System.out.println("------------------------------------------");    
     do{
       System.out.println("\n1 - Choose Employee"); //Escolha Funcionário
@@ -47,24 +47,24 @@ public class Menu {
 
       switch(option) {
         case 0: 
-          System.out.println("Finished System");
+          System.out.println("Finished cost");
           break;
         case 1: //Choose Employee
-          system.printEmployList(); 
+          cost.printEmployList(); 
           System.out.println("");
           System.out.print("Choose an employee to be user: "); 
           String choosenEmployee = in.next();
-          system.chooseEmployee(choosenEmployee);  
+          cost.chooseEmployee(choosenEmployee);  
           System.out.println(); 
 
-          if(system.isEmployeeRegistered(choosenEmployee)) {
+          if(cost.isEmployeeRegistered(choosenEmployee)) {
             System.out.println(" >> Employee: " + choosenEmployee + " successfully selected" );
           } else {
             System.out.println(" >> Employee " + choosenEmployee + " does not have a registration.");
           }
           break;
         case 2://Verify Employee Currently Logged In
-          System.out.print(" >> Employee currently Logged in the System: " + system.employeeCurrentlyLoggedIn());
+          System.out.print(" >> Employee currently Logged in the cost: " + cost.employeeCurrentlyLoggedIn());
           System.out.println();
           break;
         case 3://Include Employee
@@ -78,30 +78,32 @@ public class Menu {
           Employee employeeToBeIncluded = new Employee(NameIncludeEmployee, registryIncludeEmployee, DepIncludeEmployee);
           System.out.println("");
 
-          if(!(system.isEmployeeRegistered(NameIncludeEmployee))) {
-            system.addEmployee(employeeToBeIncluded);
+          if(!(cost.isEmployeeRegistered(NameIncludeEmployee))) {
+            cost.addEmployee(employeeToBeIncluded);
             System.out.println(" >> Employee " + NameIncludeEmployee + " successfully registered" );
-            system.printEmployList();
+            cost.printEmployList();
           } else {
-            System.out.println(" >> Employee " + NameIncludeEmployee + " already exist in the system.");
+            System.out.println(" >> Employee " + NameIncludeEmployee + " already exist in the cost.");
           }
           break;
         case 4://Add Cost Record
-          Employee employeeAux;
+          Employee employeeAux = null;
+          Department departmentAdd = null;
+          int employeeRegisterAdd = 0;
+
           System.out.println("To add a new Cost Record inform: ");
           System.out.print("Inform the employee name: ");
           String employeeName = in.next();
-          if(system.isEmployeeRegistered(employeeName)) {
-            employeeAux = system.chooseEmployee(employeeName);
-           // String department = employeeAux.getDepartment();
-            //EMPLOYEEAUX É TIPO EMPLOYEE, MAS DEPARTAMENTO É TIPO STRING, NÃO PODE APLICAR, E STRING DEPARTMENT NÃO PODE RECEBER TIPO EMPLOYEE
-           // String employeeRegister = employeeAux.getRegister();
-            //EMPLOYEEAUX É TIPO EMPLOYEE, MAS REGISTER É TIPO STRING, NÃO PODE APLICAR, E STRING DEPARTMENT NÃO PODE RECEBER TIPO EMPLOYEE
-          }else {
+
+          employeeAux = cost.chooseEmployee(employeeName);
+          if(employeeAux != null) {            
+            departmentAdd = employeeAux.department;
+            employeeRegisterAdd = employeeAux.getRegister();
+          } else {
             System.out.print("Inform the employee department: ");
-            String department = in.next();
+            departmentAdd = Department.getDepartment(in.next());
             System.out.print("Inform the employee register: ");
-            String employeeRegister = in.next();
+            employeeRegisterAdd = in.nextInt();
           }
           System.out.print("Inform the cost value: ");
           double value = in.nextDouble();
@@ -111,10 +113,11 @@ public class Menu {
           String description = in.next();
           System.out.print("Inform the cost category: ");
           String category = in.next();
-          system.newCostRecord();
+          cost.newCostRecord(employeeRegisterAdd,value,month,description,category,departmentAdd);
           break;
         case 5://delete record
           break;
+
         case 7://find cost record
           int optionCostRecord = 0;
           System.out.println("Please, select the method of search to find the cost record: ");
@@ -131,7 +134,7 @@ public class Menu {
               System.out.print("Please select the date you want to search: ");
               wantedDate = in.nextLine();
               System.out.println("\nTotal costs by this date:");
-              System.out.println(system.findCostRecordByDate(wantedDate));
+              System.out.println(cost.findCostRecordByDate(wantedDate));
               System.out.println();
               break;
             case 2:
@@ -147,7 +150,7 @@ public class Menu {
               System.out.print("Please select the category you want to search: ");
               wantedCategory = in.nextLine();
               System.out.println("\nTotal costs by this category");
-              //System.out.println(system.findCostRecordByCategory(wantedCategory));
+              //cost.out.println(cost.findCostRecordByCategory(wantedCategory));
               System.out.println();
               break;
             case 4:
@@ -155,7 +158,7 @@ public class Menu {
               System.out.print("Please select the departament you want to search: ");
               wantedDepartament = in.nextLine();
               System.out.println("\nTotal costs by this departament");
-              System.out.println(system.findCostRecordByDepartment(wantedDepartament));
+              System.out.println(cost.findCostRecordByDepartment(wantedDepartament));
               System.out.println();
               break;
             case 0:
@@ -166,7 +169,7 @@ public class Menu {
           String wantedMonth;
           System.out.print("Please select the month you want to consult: ");
           wantedMonth = in.nextLine();
-          System.out.println(system.totalCostsForTheMonth(wantedMonth));
+          System.out.println(cost.totalCostsForTheMonth(wantedMonth));
           System.out.println();
           break;
         case 9://Verify Total Costs For The Last 3 Months

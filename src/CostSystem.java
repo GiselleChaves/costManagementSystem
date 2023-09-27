@@ -79,9 +79,10 @@ public class CostSystem {
   /**
    * Method add a new cost record on the list costRecords
    */
-  public void newCostRecord(double costValue, String description, String date, String categoryCost, String department) {
+  public void newCostRecord(int employeeRegister, double value, String month, String description, String category, 
+                            Department department) {
     if (loggedIn != null && isValidDepartment(department)) {
-      CostRecord record = new CostRecord(costValue, description, date, categoryCost, department);
+      CostRecord record = new CostRecord(id, employeeRegister, value, description, month, date, category, department);
       costRecordList.add(record);
 
       System.out.println("Registro de custo adicionado com sucesso.");
@@ -90,6 +91,9 @@ public class CostSystem {
     }
   }
 
+  /**
+   * @param e
+   */
   public void employeeCurrentlyLoggedIn(Employee e) {
     if (loggedIn != null) {
       System.out.println("Employee currently logged in: " + loggedIn.getName());
@@ -102,10 +106,14 @@ public class CostSystem {
     loggedIn = e;
   }
 
-  private boolean isValidDepartment(String departmentName) {
+  /**
+   * @param departmentName
+   * @return
+   */
+  private boolean isValidDepartment(Department departmentName) {
     Department[] departments = new Department[0];
     for (Department department : departments) {
-      if (department.getDepartment().equals(departmentName)) {
+      if (Department.getDepartment(department.toString()).equals(departmentName)) {
         return true;
       }
     }
@@ -115,7 +123,7 @@ public class CostSystem {
 
   /**
    * Method find a cost record with the date received by parameter
-  // * @param dataRecord
+   * @param dataRecord
    * @return the cost record with the date received by parameter
    */
   public List<CostRecord> findCostRecordByDate(String targetDate) {
@@ -128,24 +136,18 @@ public class CostSystem {
     return costRecordListAux;
   }
    
- 
-
-  
-
-  
   /**
    * Method find a cost record with the date received by parameter
- //  * @param category
+   * @param category
    * @return the cost record with the category received by parameter
    */
   public void findCostRecordByCategory(String targetCategory) {
     System.out.println("Filtro por gasto por Categoria: ");
-
-      for (CostRecord cost : costRecordList) {
-        if (cost.getCategory().equalsIgnoreCase(targetCategory)) {
-          System.out.println("ID: " + cost.getId());
-        }
+    for (CostRecord cost : costRecordList) {
+      if (cost.getCategory().equalsIgnoreCase(targetCategory)) {
+        System.out.println("ID: " + cost.getId());
       }
+    }
   }
   
   /**
@@ -165,7 +167,7 @@ public class CostSystem {
   
   /**
    * Method find and delete a cost record with the id received by parameter
-  // * @param department
+   * @param department
    * @return the cost record with the department received by parameter
    */
   public void deleteRecord() {}//Oliver
@@ -173,7 +175,7 @@ public class CostSystem {
     
   /**
    * Method return the total value of cost records registereds
- //  * @param costRecordList
+   * @param costRecordList
    * @return totalCosts
    */
   public double getTotalCosts() {

@@ -1,30 +1,29 @@
-//armazena todos os custos dos lançamentos dos funcionarios
-
 public class CostRecord {
-    private int id = 0;
-    private String employeeRegister;
+    private static int countId = 0;
+    private int id;
+    private int employeeRegister;
     private double value;
     private String month;
     private String description;
     private String category;
-    private String department;
+    private Department department;
 
-    public CostRecord(int id, String employeeRegister, double value, String month, String description, String category, 
-                    String department){
-        this.id++;
+    public CostRecord(int employeeRegister, double value, String month, String description, String category, 
+                    Department department){
         this.employeeRegister = employeeRegister;
         this.value = value;
         this.month = month;
         this.description = description;
         this.category = category;
         this.department = department;
+        this.id=countId++;
     }
 
     public int getId() {
         return id;
     }
 
-    public String getEmployeeRegister() {
+    public int getEmployeeRegister() {
         return employeeRegister;
     }
 
@@ -60,11 +59,11 @@ public class CostRecord {
         this.category = category;
     }
 
-    public String getDepartament() {
+    public Department getDepartament() {
         return department;
     }
 
-    public void setDepartament(String departament) {
+    public void setDepartament(Department departament) {
         this.department = departament;
     }
 }
