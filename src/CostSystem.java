@@ -5,6 +5,8 @@ public class CostSystem {
     private List<Employee> employeeList;
     private List<CostRecord> costRecordList;
     Employee employeeSelected;
+    public static Object out;
+    private Employee loggedIn;
 
   public CostSystem() {
     employeeList = new ArrayList<>();
@@ -77,7 +79,38 @@ public class CostSystem {
   /**
    * Method add a new cost record on the list costRecords
    */
-  public void newCostRecord() {} //Nicolli
+  public void newCostRecord(double costValue, String description, String date, String categoryCost, String department) {
+    if (loggedIn != null && isValidDepartment(department)) {
+      CostRecord record = new CostRecord(costValue, description, date, categoryCost, department);
+      costRecordList.add(record);
+
+      System.out.println("Registro de custo adicionado com sucesso.");
+    } else {
+      System.out.println("Falha ao adicionar registro de custo. Verifique o departamento ou faça login.");
+    }
+  }
+
+  public void employeeCurrentlyLoggedIn(Employee e) {
+    if (loggedIn != null) {
+      System.out.println("Employee currently logged in: " + loggedIn.getName());
+    } else {
+      System.out.println("No employees are currently logged in.");
+    }
+  }
+
+  public void loggedIn(Employee e) {
+    loggedIn = e;
+  }
+
+  private boolean isValidDepartment(String departmentName) {
+    Department[] departments = new Department[0];
+    for (Department department : departments) {
+      if (department.getDepartment().equals(departmentName)) {
+        return true;
+      }
+    }
+    return false;
+  }
   
 
   /**
