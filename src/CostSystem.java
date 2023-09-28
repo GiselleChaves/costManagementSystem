@@ -210,9 +210,24 @@ public class CostSystem {
   /**
    * 
    */
-  public void totalCostsForTheLast3Months() {
-   
+  public double totalCostsForTheLast3Months(int currentMonthNumber) {
+     double totalCosts = 0;
+
+     int startMonthNumber = currentMonthNumber - 2;
+
+      if (startMonthNumber <= 0) {
+      startMonthNumber += 12;  
+      }
+
+      for (CostRecord costRecord : costRecordList) {
+        int costMonthNumber = Integer.parseInt(costRecord.getMonth());
+        if (costMonthNumber >= startMonthNumber && costMonthNumber <= currentMonthNumber) {
+            totalCosts += costRecord.getValue();
+        }
+      }
+      return totalCosts;
   }//Augusto               gustavo menu
+ 
   
   /**
    * 
