@@ -186,7 +186,8 @@ public class CostSystem {
         if (costMonthNumber >= startMonthNumber && costMonthNumber <= currentMonthNumber) {
             totalCosts += costRecord.getValue();
         }
-    }
+      }
+      return totalCosts;
 
      
 
