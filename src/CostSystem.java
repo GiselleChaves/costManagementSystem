@@ -172,8 +172,17 @@ public class CostSystem {
   /**
    * 
    */
-  public void totalCostsForTheLast3Months(String currentMonth) {
-   
+  public double totalCostsForTheLast3Months(int currentMonthNumber) {
+     double totalCosts = 0;
+
+     int startMonthNumber = currentMonthNumber - 2;
+
+      if (startMonthNumber <= 0) {
+      startMonthNumber += 12;  
+      }
+
+     return null;
+
   }//Augusto               gustavo menu
  
   
