@@ -181,7 +181,15 @@ public class CostSystem {
       startMonthNumber += 12;  
       }
 
-     return null;
+      for (CostRecord costRecord : costRecordList) {
+        int costMonthNumber = Integer.parseInt(costRecord.getMonth());
+        if (costMonthNumber >= startMonthNumber && costMonthNumber <= currentMonthNumber) {
+            totalCosts += costRecord.getValue();
+        }
+    }
+
+     
+
 
   }//Augusto               gustavo menu
  
