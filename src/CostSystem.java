@@ -172,9 +172,10 @@ public class CostSystem {
   /**
    * 
    */
-  public void totalCostsForTheLast3Months() {
+  public void totalCostsForTheLast3Months(String currentMonth) {
    
   }//Augusto               gustavo menu
+ 
   
   /**
    * 
