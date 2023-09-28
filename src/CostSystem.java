@@ -4,12 +4,14 @@ import java.util.List;
 public class CostSystem {
     private List<Employee> employeeList;
     private List<CostRecord> costRecordList;
-    Employee employeeSelected;
+    //Employee employeeSelected;
     public static Object out;
     private Employee loggedIn;
+    private Employee chosenEmployee = null;
 
   public CostSystem() {
     employeeList = new ArrayList<>();
+    costRecordList = new ArrayList<>();
   }
 
   /**
@@ -41,6 +43,7 @@ public class CostSystem {
   public Employee chooseEmployee(String employee) { //giselle menu
     for(Employee chosenEmployee : employeeList) {
       if (chosenEmployee.getName().equals(employee)) {
+        loggedIn = chosenEmployee;
         return chosenEmployee; 
       }
       break;
@@ -51,9 +54,9 @@ public class CostSystem {
   /**
    * Return the employ currently Logged in the system
    */
-  public Employee employeeCurrentlyLoggedIn() {
+  /*public Employee employeeCurrentlyLoggedIn() {
     return employeeSelected;
-  }
+  }*/
 
   /**
    * Return a boolean value. True if is registered or false if not
@@ -82,7 +85,7 @@ public class CostSystem {
   public void newCostRecord(int employeeRegister, double value, String month, String description, String category, 
                             Department department) {
     if (loggedIn != null && isValidDepartment(department)) {
-      CostRecord record = new CostRecord(id, employeeRegister, value, description, month, date, category, department);
+      CostRecord record = new CostRecord(employeeRegister, value, month, description, category, department);
       costRecordList.add(record);
 
       System.out.println("Registro de custo adicionado com sucesso.");
@@ -94,16 +97,16 @@ public class CostSystem {
   /**
    * @param e
    */
-  public void employeeCurrentlyLoggedIn(Employee e) {
-    if (loggedIn != null) {
-      System.out.println("Employee currently logged in: " + loggedIn.getName());
+  public void employeeCurrentlyLoggedIn(String chosenEmployee) {
+    if (this.isEmployeeRegistered(chosenEmployee)) {
+      System.out.println("Employee currently logged in: " + chosenEmployee);
     } else {
       System.out.println("No employees are currently logged in.");
     }
   }
 
-  public void loggedIn(Employee e) {
-    loggedIn = e;
+  public Employee loggedIn() {
+    return loggedIn;
   }
 
   /**
@@ -141,13 +144,16 @@ public class CostSystem {
    * @param category
    * @return the cost record with the category received by parameter
    */
-  public void findCostRecordByCategory(String targetCategory) {
-    System.out.println("Filtro por gasto por Categoria: ");
-    for (CostRecord cost : costRecordList) {
-      if (cost.getCategory().equalsIgnoreCase(targetCategory)) {
-        System.out.println("ID: " + cost.getId());
+  public CostRecord findCostRecordByCategory(String targetCategory) {
+   // System.out.println("Filtro por gasto por Categoria: ");
+      CostRecord categoryAux = null;
+      for (CostRecord cost : costRecordList) {
+        if (cost.getCategory().equalsIgnoreCase(targetCategory)) {
+       //   System.out.println("ID: " + cost.getId());
+          categoryAux = cost;
+        }
       }
-    }
+      return categoryAux;
   }
   
   /**
@@ -211,7 +217,7 @@ public class CostSystem {
   /**
    * 
    */
-  public void employeesWithHighestSumOfRecordedCosts() {//Daniele
+  /*public Employee employeesWithHighestSumOfRecordedCosts() {//Daniele
     int maxRegister = -1;
     double maxSum = 0.0;
 
@@ -221,9 +227,9 @@ public class CostSystem {
       double sum = 0.0;
 
     for (CostRecord cost : costRecordList) {
-        if (cost.getEmployeeRegister() == registerString) {
-            sum += cost.getValue();
-        }
+      if (cost.getEmployeeRegister() == registerString) {
+        sum += cost.getValue();
+      }
     }
     if (sum > maxSum) {
       maxSum = sum;
@@ -237,7 +243,7 @@ public class CostSystem {
           break;
       }
     }
-  }
+  }*/
 
   /**
    * 
@@ -269,13 +275,14 @@ public class CostSystem {
   /**
    * @param departmentToFind
    */
-  public void findCostRecordByDepartment(Department departmentToFind) {
-    System.out.println("Filtro por Gasto por Departamento");
+  public CostRecord findCostRecordByDepartment(Department departmentToFind) {
+    CostRecord categoryAux = null;
     for (CostRecord cost : costRecordList ) {
       if (departmentToFind.equals(cost.getDepartament())) {
-          System.out.println(cost);
+        categoryAux = cost;
       }
     }
+    return categoryAux;
   }
 
 
@@ -303,7 +310,7 @@ public class CostSystem {
     media = total / count;
     mediaSemMaximoOUminimo = total - min - max;
     mediaSemMaximoOUminimo = mediaSemMaximoOUminimo / count;
-    // Apresentão dos dados medias maximos e minimos por departament .
+    
     System.out.println("Valor Total Gasto por Departamento : " + total);
     System.out.println("\nValor Medio de Gasto por Departamento : " + media);
     System.out.println("\nValor medio descartando o valor max e min de Gasto do Departamento : " + mediaSemMaximoOUminimo);

@@ -10,15 +10,16 @@ public class Menu {
 
   //MOCK
   public void mock() {
-    cost.addEmployee(new Employee("Ana", 23165420, "Financial"));
-    cost.addEmployee(new Employee("Carlos", 23101550, "IT"));
-    cost.addEmployee(new Employee("Mariagit ", 23101550, "Accounting"));
-    cost.addEmployee(new Employee("Camila", 23101550, "Purchasing"));
-    cost.addEmployee(new Employee("Sandra", 23101550, "Financial"));
+    cost.addEmployee(new Employee("Ana", 23165420, Department.FINANCIAL));
+    cost.addEmployee(new Employee("Carlos", 23101550, Department.IT));
+    cost.addEmployee(new Employee("Mariagit ", 23101550, Department.ACCOUNTING));
+    cost.addEmployee(new Employee("Camila", 23101550, Department.PURCHASING));
+    cost.addEmployee(new Employee("Sandra", 23101550, Department.FINANCIAL));
   }
   
 
   public void menu() {
+    String choosenEmployee = null;
     mock();
     Scanner in = new Scanner(System.in);
     int option = 0;
@@ -53,7 +54,7 @@ public class Menu {
           cost.printEmployList(); 
           System.out.println("");
           System.out.print("Choose an employee to be user: "); 
-          String choosenEmployee = in.next();
+          choosenEmployee = in.next();
           cost.chooseEmployee(choosenEmployee);  
           System.out.println(); 
 
@@ -64,7 +65,7 @@ public class Menu {
           }
           break;
         case 2://Verify Employee Currently Logged In
-          System.out.print(" >> Employee currently Logged in the cost: " + cost.employeeCurrentlyLoggedIn());
+          cost.employeeCurrentlyLoggedIn(choosenEmployee);
           System.out.println();
           break;
         case 3://Include Employee
@@ -73,7 +74,7 @@ public class Menu {
           System.out.print("Inform the employee registry: ");
           int registryIncludeEmployee = in.nextInt();
           System.out.print("Inform the employee department: ");
-          String DepIncludeEmployee = in.next();
+          Department DepIncludeEmployee = Department.getDepartment(in.next());
 
           Employee employeeToBeIncluded = new Employee(NameIncludeEmployee, registryIncludeEmployee, DepIncludeEmployee);
           System.out.println("");
@@ -113,9 +114,13 @@ public class Menu {
           String description = in.next();
           System.out.print("Inform the cost category: ");
           String category = in.next();
-          cost.newCostRecord(employeeRegisterAdd,value,month,description,category,departmentAdd);
+          cost.newCostRecord(employeeRegisterAdd,value, month,description,category,departmentAdd);
           break;
-        case 5://delete record
+          
+        case 5://delete recordg
+          System.out.println("Inform the id of the cost record that you want to delete:");
+          int idDelete = in.nextInt;
+          
           break;
 
         case 7://find cost record
@@ -150,7 +155,7 @@ public class Menu {
               System.out.print("Please select the category you want to search: ");
               wantedCategory = in.nextLine();
               System.out.println("\nTotal costs by this category");
-              //cost.out.println(cost.findCostRecordByCategory(wantedCategory));
+              //System.out.println(cost.findCostRecordByCategory(wantedCategory));
               System.out.println();
               break;
             case 4:
