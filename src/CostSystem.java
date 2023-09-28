@@ -188,10 +188,6 @@ public class CostSystem {
         }
       }
       return totalCosts;
-
-     
-
-
   }//Augusto               gustavo menu
  
   
