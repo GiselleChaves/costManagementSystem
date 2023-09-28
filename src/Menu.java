@@ -120,7 +120,7 @@ public class Menu {
         case 5://delete recordg
           System.out.println("Inform the id of the cost record that you want to delete:");
           int idDelete = in.nextInt;
-          
+
           break;
 
         case 7://find cost record
@@ -155,7 +155,7 @@ public class Menu {
               System.out.print("Please select the category you want to search: ");
               wantedCategory = in.nextLine();
               System.out.println("\nTotal costs by this category");
-              //System.out.println(cost.findCostRecordByCategory(wantedCategory));
+              System.out.println(cost.findCostRecordByCategory(wantedCategory));
               System.out.println();
               break;
             case 4:

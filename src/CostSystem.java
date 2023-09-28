@@ -40,7 +40,7 @@ public class CostSystem {
    * @param employee
    * @return the employee selected
    */
-  public Employee chooseEmployee(String employee) { //giselle menu
+  public Employee chooseEmployee(String employee) {
     for(Employee chosenEmployee : employeeList) {
       if (chosenEmployee.getName().equals(employee)) {
         loggedIn = chosenEmployee;
@@ -145,11 +145,9 @@ public class CostSystem {
    * @return the cost record with the category received by parameter
    */
   public CostRecord findCostRecordByCategory(String targetCategory) {
-   // System.out.println("Filtro por gasto por Categoria: ");
       CostRecord categoryAux = null;
       for (CostRecord cost : costRecordList) {
         if (cost.getCategory().equalsIgnoreCase(targetCategory)) {
-       //   System.out.println("ID: " + cost.getId());
           categoryAux = cost;
         }
       }
@@ -164,7 +162,7 @@ public class CostSystem {
   public CostRecord findCostRecordByDepartment(String department) {
     CostRecord departmentAux = null;
     for(CostRecord cr : costRecordList) {
-      if(cr.getDepartament().equals(department)) {
+      if(Department.getDepartment(department.toString()).equals(department)) {
         departmentAux = cr;
       }
     }
@@ -176,7 +174,15 @@ public class CostSystem {
    * @param department
    * @return the cost record with the department received by parameter
    */
-  public void deleteRecord() {}//Oliver
+  public boolean deleteRecord(int id) {
+    for(CostRecord cr : costRecordList) {
+      if(cr.getId() == id) {
+        costRecordList.remove(id);
+        return true;
+      }
+    }
+    return false;
+  }
   
     
   /**
@@ -195,7 +201,9 @@ public class CostSystem {
   }
 
   /**
-   * 
+   * Method return the total of costs of the month
+   * @param String month
+   * @return the total of costs of the month
    */
   public double totalCostsForTheMonth(String month) {
     double totalCosts = 0;
@@ -208,7 +216,9 @@ public class CostSystem {
   }
   
   /**
-   * 
+   * total of costs of the 3 last months
+   * @param currentMonthNumber
+   * @return totalCosts
    */
   public double totalCostsForTheLast3Months(int currentMonthNumber) {
      double totalCosts = 0;
@@ -226,23 +236,22 @@ public class CostSystem {
         }
       }
       return totalCosts;
-  }//Augusto               gustavo menu
+  }
  
   
   /**
-   * 
+   * Method return the employee With Highest Sum Of Recorded Costs
    */
-  /*public Employee employeesWithHighestSumOfRecordedCosts() {//Daniele
+  public void employeesWithHighestSumOfRecordedCosts() {
     int maxRegister = -1;
     double maxSum = 0.0;
 
     for (Employee employeeAux : employeeList) {
       int register = employeeAux.getRegister();
-      String registerString = Integer.toString(register);
       double sum = 0.0;
 
     for (CostRecord cost : costRecordList) {
-      if (cost.getEmployeeRegister() == registerString) {
+      if (cost.getEmployeeRegister() == register) {
         sum += cost.getValue();
       }
     }
@@ -258,16 +267,6 @@ public class CostSystem {
           break;
       }
     }
-  }*/
-
-  /**
-   * 
-   */
-  public double calculateAverageCostPerEmployee() {
-    if (employeeList.isEmpty() || costRecordList.isEmpty()) {
-      return 0;
-    }
-      return 0;
   }
 
 
@@ -276,6 +275,19 @@ public class CostSystem {
    */
   public int countEmployeesWithCostOver500() {
     int count = 0;
+
+    for (Employee employee : employeeList) {
+        boolean hasCostOver500 = false;
+        for (CostRecord record : costRecordList) {
+            if (record.getValue() > 500) {
+                hasCostOver500 = true;
+                break;
+            }
+        }
+        if (hasCostOver500) {
+            count++;
+        }
+      }
     return count;
   }
 
@@ -283,8 +295,14 @@ public class CostSystem {
   /**
    *
    */
-  public void findCostRecordByDescription(){
-
+  public CostRecord findCostRecordByDescription(String description){
+    CostRecord descriptionAux = null;
+    for (CostRecord cost : costRecordList ) {
+      if (description.equals(cost.getDescription())) {
+        descriptionAux = cost;
+      }
+    }
+    return descriptionAux;
   }
 
   /**
