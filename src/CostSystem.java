@@ -7,14 +7,12 @@ public class CostSystem {
     //Employee employeeSelected;
     public static Object out;
     private Employee loggedIn;
-    private Employee chosenEmployee = null;
     public CostRecord addCostRecord;
 
   public CostSystem() {
     employeeList = new ArrayList<>();
     costRecordList = new ArrayList<>();
   }
-
   /**
    * Method of adding employees to the list
    * @param employee
@@ -105,7 +103,7 @@ public class CostSystem {
   }
 
   /**
-   * @param e
+   * @param
    */
   public void employeeCurrentlyLoggedIn(String chosenEmployee) {
     if (this.isEmployeeRegistered(chosenEmployee)) {
@@ -136,7 +134,7 @@ public class CostSystem {
 
   /**
    * Method find a cost record with the date received by parameter
-   * @param dataRecord
+   * @param //dataRecord
    * @return the cost record with the date received by parameter
    */
   public List<CostRecord> findCostRecordByDate(String targetDate) {
@@ -151,7 +149,7 @@ public class CostSystem {
    
   /**
    * Method find a cost record with the date received by parameter
-   * @param category
+   * @param ///category
    * @return the cost record with the category received by parameter
    */
   public CostRecord findCostRecordByCategory(String targetCategory) {
@@ -196,7 +194,7 @@ public class CostSystem {
   
   /**
    * Method find and delete a cost record with the id received by parameter
-   * @param department
+   * @param //department
    * @return the cost record with the department received by parameter
    */
   public boolean deleteRecord(int id) {
@@ -212,7 +210,7 @@ public class CostSystem {
     
   /**
    * Method return the total value of cost records registereds
-   * @param costRecordList
+   * @param //costRecordList
    * @return totalCosts
    */
   public double getTotalCosts() {
@@ -227,7 +225,7 @@ public class CostSystem {
 
   /**
    * Method return the total of costs of the month
-   * @param String month
+   * @param //String month
    * @return the total of costs of the month
    */
   public double totalCostsForTheMonth(String month) {
@@ -375,8 +373,4 @@ public class CostSystem {
     System.out.println("\nValue of the Department's largest purchase : " + max);
     System.out.println("\nValue of the Department's smallest purchase  : " + min);
   }
-
-  /*public void verifyDepartmentsRegistereds() {
-    for(Department departmentAux : Department.getDepartment(null))
-  }*/
 }

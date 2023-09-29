@@ -158,7 +158,7 @@ public class Menu {
               String wantedDescription = in.nextLine();
               System.out.println(cost.findCostRecordByDescription(wantedDescription));
               System.out.println("\nTotal costs by this description");
-
+              System.out.println(cost.findCostRecordByDescription(wantedDescription));
               System.out.println();
               break;
             case 3:
@@ -183,7 +183,7 @@ public class Menu {
           break;
         case 8://Verify Total Costs For The Month
           String wantedMonth;
-          System.out.print("Please select the month you want to consult: ");
+          System.out.print("Please write the month you want to consult: ");
           wantedMonth = in.nextLine();
           System.out.println(cost.totalCostsForTheMonth(wantedMonth));
           System.out.println();
