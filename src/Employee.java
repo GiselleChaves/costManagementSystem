@@ -1,14 +1,14 @@
 public class Employee {
   private String name;
   private int register;
-  String department;
+  Department department;
 
   /**
    * @param name
    * @param register
-   * @param string
+   * @param Department
    */
-  public Employee(String name, int register, String department) {
+  public Employee(String name, int register, Department department) {
     this.name = name;
     this.register = register;
     this.department = department;
@@ -40,24 +40,17 @@ public class Employee {
    */
   public void setRegister(int register) {
     this.register = register;
-  }
-  
+  }  
+
   /**
    * @return
    */
-  public String getDepartment() {
+  public Department getDepartment() {
     return department;
-  }
-  
-  /**
-   * @param department
-   */
-  public void setDepartment(String department) {
-    this.department = department;
   }
 
   @Override
   public String toString() {
-    return "Employee [name=" + name + ", register=" + register + ", department=" + department + "]";
+    return "Employee: Name: " + name + ", Register: " + register + ", Department: " + department;
   }
 }

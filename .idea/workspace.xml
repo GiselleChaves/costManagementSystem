@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="659590ec-411d-43d1-934a-a8ec11a4391e" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/costManagementSystem/CostRecord.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/costManagementSystem/CostRecord.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/costManagementSystem/CostSystem.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/costManagementSystem/CostSystem.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/costManagementSystem/Department.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/costManagementSystem/Department.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/costManagementSystem/Employee.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/costManagementSystem/Employee.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/costManagementSystem/Menu.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/costManagementSystem/Menu.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/CostSystem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/CostSystem.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Menu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Menu.java" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <favorite-branches>
+      <branch-storage>
+        <map>
+          <entry type="LOCAL">
+            <value>
+              <list>
+                <branch-info repo="$PROJECT_DIR$" source="Gustavo" />
+              </list>
+            </value>
+          </entry>
+        </map>
+      </branch-storage>
+    </favorite-branches>
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="LucasDoComençoEntendendoOModeloEImplementando" />
+      </map>
+    </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;GustavoDeCampos&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">
+    <option name="selectedUrlAndAccountId">
+      <UrlAndAccount>
+        <option name="accountId" value="baa665fb-38c0-4ddd-bb61-64f1873f9413" />
+        <option name="url" value="https://github.com/GiselleChaves/costManagementSystem.git" />
+      </UrlAndAccount>
+    </option>
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: -1
+}</component>
+  <component name="ProjectId" id="2VGBmbarAnGaitDWweMODpDGYAa" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;developer&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  }
+}</component>
+  <component name="RunManager">
+    <configuration name="App" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="App" />
+      <module name="costManagementSystem" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.App" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="659590ec-411d-43d1-934a-a8ec11a4391e" name="Changes" comment="" />
+      <created>1694452698133</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1694452698133</updated>
+      <workItem from="1694452701722" duration="1937000" />
+      <workItem from="1694454671529" duration="664000" />
+      <workItem from="1694455548487" duration="87000" />
+      <workItem from="1694455653970" duration="41000" />
+      <workItem from="1694456447728" duration="20000" />
+      <workItem from="1694456608133" duration="498000" />
+      <workItem from="1694457126613" duration="325000" />
+      <workItem from="1695417027599" duration="56000" />
+      <workItem from="1695417120789" duration="7136000" />
+      <workItem from="1695670114101" duration="46000" />
+      <workItem from="1695749253584" duration="165000" />
+      <workItem from="1695771140470" duration="1342000" />
+      <workItem from="1695772882723" duration="9900000" />
+      <workItem from="1695943547248" duration="1360000" />
+      <workItem from="1695948947985" duration="70000" />
+      <workItem from="1695949036075" duration="74000" />
+      <workItem from="1695949126365" duration="1392000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <breakpoint enabled="true" type="java-exception">
+          <properties class="java.lang.NullPointerException" package="java.lang" />
+          <option name="timeStamp" value="1" />
+        </breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+</project>

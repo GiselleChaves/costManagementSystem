@@ -1,24 +1,29 @@
-public class Department {
-  private String deparmentName;
+public enum Department {
+  FINANCIAL("Financial"), IT("IT"), ACCOUNTING("Accounting"), PURCHASING("Purchasing");
+  public String value;
 
-  /**
-   * @param deparmentName
-   */
-  public Department(String deparmentName) {
-    this.deparmentName = deparmentName;
+  private Department(String department){
+    this.value = department;
   }
 
-  /**
-   * @return
-   */
-  public String getDeparmentName() {
-    return deparmentName;
+  public static Department getDepartment(String department) {
+    for (Department departmentAux : values()) {
+      if (departmentAux.value.equals(department)) {
+        return departmentAux;
+      }
+    }
+    return null;
   }
 
-  /**
-   * @param departmentName
-   */
-  public void setDeparmentName(String deparmentName) {
-    this.deparmentName = deparmentName;
+  public static void verifyRegisteredDepartments() {
+    for (Department departmentAux : values()) {
+      System.out.println(departmentAux.value);
+      }
   }
+
+  @Override
+  public String toString() {
+    return ("Department: " + value);
+  }
+
 }

@@ -7,7 +7,11 @@
 
 ### Authors
 
+<<<<<<< HEAD
 | [<img loading="lazy" src="https://avatars.githubusercontent.com/u/112208391?v=4" width=115><br><sub>Giselle Chaves</sub>](https://github.com/GiselleChaves) | | [<img loading="lazy" src="https://avatars.githubusercontent.com/u/112987626?v=4" width=115><br><sub>Matheus Melo</sub>](https://github.com/mtsmelo95) | [<img loading="lazy" src="https://avatars.githubusercontent.com/u/120344817?v=4" width=115><br><sub>Nicoli Oliveira</sub>](https://github.com/NicoliOliveira19) | | [<img loading="lazy" src="https://avatars.githubusercontent.com/u/113313612?v=4" width=115><br><sub>Lucas Taborda</sub>](https://github.com/LucasRCTaborda) | [<img loading="lazy" src="https://avatars.githubusercontent.com/u/49623007?v=4" width=115><br><sub>Damielle Madrid</sub>](https://github.com/daniellemadrid) | | [<img loading="lazy" src="https://avatars.githubusercontent.com/u/142631209?v=4" width=115><br><sub>Matheus Melo</sub>](https://github.com/oCowley) | [<img loading="lazy" src="https://avatars.githubusercontent.com/u/112337802?v=4" width=115><br><sub>Augusto Leal</sub>](https://github.com/AugustoLealES) | 
+=======
+| [<img loading="lazy" src="https://avatars.githubusercontent.com/u/112208391?v=4" width=115><br><sub>Giselle Chaves</sub>](https://github.com/GiselleChaves) | | [<img loading="lazy" src="https://avatars.githubusercontent.com/u/112987626?v=4" width=115><br><sub>Matheus Melo</sub>](https://github.com/mtsmelo95) | [<img loading="lazy" src="https://avatars.githubusercontent.com/u/120344817?v=4" width=115><br><sub>Nicoli Oliveira</sub>](https://github.com/NicoliOliveira19) | | [<img loading="lazy" src="https://avatars.githubusercontent.com/u/113313612?v=4" width=115><br><sub>Lucas Taborda</sub>](https://github.com/LucasRCTaborda) | [<img loading="lazy" src="https://avatars.githubusercontent.com/u/49623007?v=4" width=115><br><sub>Damielle Madrid</sub>](https://github.com/daniellemadrid) | | [<img loading="lazy" src="https://avatars.githubusercontent.com/u/142631209?v=4" width=115><br><sub>Oliver Cowley</sub>](https://github.com/oCowley) | [<img loading="lazy" src="https://avatars.githubusercontent.com/u/112337802?v=4" width=115><br><sub>Augusto Leal</sub>](https://github.com/AugustoLealES) | 
+>>>>>>> developer
 | :---------------------------------------------------------------------------------------------------------------------------------------------------------: | :-: | :--------------------------------------------------------------------------------------------------------------------------------------------------------: | :---------------------------------------------------------------------------------------------------------------------------------------------------------: | :-: | :--------------------------------------------------------------------------------------------------------------------------------------------------------: | :---------------------------------------------------------------------------------------------------------------------------------------------------------: | :-: | :--------------------------------------------------------------------------------------------------------------------------------------------------------: | :---------------------------------------------------------------------------------------------------------------------------------------------------------: |
 
 <hr>
@@ -45,4 +49,8 @@ After to do the download of the project:
   - In the taskbar click on "run";
   - Click in the option "run withouth debugging";
   - The terminal will open and you can start the use the system, always following the menu options.
+<<<<<<< HEAD
 <hr>
+=======
+<hr>
+>>>>>>> developer
