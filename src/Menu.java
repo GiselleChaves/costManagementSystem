@@ -119,7 +119,7 @@ public class Menu {
           
         case 5://delete recordg
           System.out.println("Inform the id of the cost record that you want to delete:");
-          int idDelete = in.nextInt;
+          int idDelete = in.nextInt();
 
           break;
 
@@ -147,7 +147,7 @@ public class Menu {
               System.out.print("Please select the description you want to search: ");
               wantedDescription = in.nextLine();
               System.out.println("\nTotal costs by this description");
-
+              System.out.println(cost.findCostRecordByDescription(wantedDescription));
               System.out.println();
               break;
             case 3:
@@ -172,15 +172,24 @@ public class Menu {
           break;
         case 8://Verify Total Costs For The Month
           String wantedMonth;
-          System.out.print("Please select the month you want to consult: ");
+          System.out.print("Please write the month you want to consult: ");
           wantedMonth = in.nextLine();
           System.out.println(cost.totalCostsForTheMonth(wantedMonth));
           System.out.println();
           break;
         case 9://Verify Total Costs For The Last 3 Months
-
+          int startMonth;
+          System.out.println("Please, select the number of the current month");
+          startMonth = in.nextInt();
+          System.out.println(cost.totalCostsForTheLast3Months(startMonth));
+          System.out.println();
           break;
         case 10://Choose functionality1
+          Department departamentToFind = Department.getDepartment();
+          String departamentAux;
+          System.out.println("Please select the departament you want to check");
+          departamentAux = in.nextLine();
+          System.out.println(cost.chooseFunctionality1(Department.getDepartment(departamentAux)));
           break;
         case 11://Choose functionality2
           break;

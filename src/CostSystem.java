@@ -13,7 +13,6 @@ public class CostSystem {
     employeeList = new ArrayList<>();
     costRecordList = new ArrayList<>();
   }
-
   /**
    * Method of adding employees to the register
    * @param employee
@@ -95,7 +94,7 @@ public class CostSystem {
   }
 
   /**
-   * @param e
+   * @param
    */
   public void employeeCurrentlyLoggedIn(String chosenEmployee) {
     if (this.isEmployeeRegistered(chosenEmployee)) {
@@ -126,7 +125,7 @@ public class CostSystem {
 
   /**
    * Method find a cost record with the date received by parameter
-   * @param dataRecord
+   * @param //dataRecord
    * @return the cost record with the date received by parameter
    */
   public List<CostRecord> findCostRecordByDate(String targetDate) {
@@ -141,7 +140,7 @@ public class CostSystem {
    
   /**
    * Method find a cost record with the date received by parameter
-   * @param category
+   * @param ///category
    * @return the cost record with the category received by parameter
    */
   public CostRecord findCostRecordByCategory(String targetCategory) {
@@ -171,7 +170,7 @@ public class CostSystem {
   
   /**
    * Method find and delete a cost record with the id received by parameter
-   * @param department
+   * @param //department
    * @return the cost record with the department received by parameter
    */
   public boolean deleteRecord(int id) {
@@ -187,7 +186,7 @@ public class CostSystem {
     
   /**
    * Method return the total value of cost records registereds
-   * @param costRecordList
+   * @param //costRecordList
    * @return totalCosts
    */
   public double getTotalCosts() {
@@ -202,7 +201,7 @@ public class CostSystem {
 
   /**
    * Method return the total of costs of the month
-   * @param String month
+   * @param //String month
    * @return the total of costs of the month
    */
   public double totalCostsForTheMonth(String month) {
@@ -323,7 +322,7 @@ public class CostSystem {
    * @param departmentToFind
    */
   public void chooseFunctionality1(Department departmentToFind) {
-    System.out.println("Media De Gasto pelo Departamento");
+    System.out.println("Average cost by department");
     int count = 0;
     double total = 0;
     double media = 0;
@@ -344,10 +343,10 @@ public class CostSystem {
     mediaSemMaximoOUminimo = total - min - max;
     mediaSemMaximoOUminimo = mediaSemMaximoOUminimo / count;
     
-    System.out.println("Valor Total Gasto por Departamento : " + total);
-    System.out.println("\nValor Medio de Gasto por Departamento : " + media);
-    System.out.println("\nValor medio descartando o valor max e min de Gasto do Departamento : " + mediaSemMaximoOUminimo);
-    System.out.println("\nValor da maior compra do Departamento : " + max);
-    System.out.println("\nValor da menor compra do Departamento  : " + min);
+    System.out.println("Total cost for departament : " + total);
+    System.out.println("\nAvarege cost by departament : " + media);
+    System.out.println("\nMedium value discarding the maximum and the minimum cost of the departament : " + mediaSemMaximoOUminimo);
+    System.out.println("\nValue of the biggest purchase of the departament : " + max);
+    System.out.println("\nvalue of the smallest purchase of the departament : " + min);
   }
 }
