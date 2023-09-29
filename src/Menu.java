@@ -2,9 +2,11 @@ import java.util.Scanner;
 
 public class Menu {
   CostSystem cost;
+  CostRecord costRecord;
 
   public Menu() {
     cost = new CostSystem();
+    //costRecord = new CostRecord(0, 0, null, null, null, null);
   }
 
 
@@ -12,9 +14,18 @@ public class Menu {
   public void mock() {
     cost.addEmployee(new Employee("Ana", 23165420, Department.FINANCIAL));
     cost.addEmployee(new Employee("Carlos", 23101550, Department.IT));
-    cost.addEmployee(new Employee("Mariagit ", 23101550, Department.ACCOUNTING));
-    cost.addEmployee(new Employee("Camila", 23101550, Department.PURCHASING));
-    cost.addEmployee(new Employee("Sandra", 23101550, Department.FINANCIAL));
+    cost.addEmployee(new Employee("Maria ", 23156250, Department.ACCOUNTING));
+    cost.addEmployee(new Employee("Camila", 12564329, Department.PURCHASING));
+    cost.addEmployee(new Employee("Sandra", 45856795, Department.FINANCIAL));
+    cost.addEmployee(new Employee("José ", 45687235, Department.FINANCIAL));
+
+    cost.addCostRecord = new CostRecord(23165420, 567.36, "may", "Cleaning material", "Cleaning", Department.FINANCIAL);
+    cost.addCostRecord = new CostRecord(23156250, 17.98, "april", "Adm material", "Administrative", Department.ACCOUNTING);
+    cost.addCostRecord = new CostRecord(23101550, 1952.74, "may", "Equipents", "IT Equipments", Department.IT);
+    cost.addCostRecord = new CostRecord(45856795, 203.14, "april", "Adm material", "Administrative", Department.FINANCIAL);
+    cost.addCostRecord = new CostRecord(45687235, 465.59, "december", "Adm material", "Administrative", Department.PURCHASING);
+    cost.addCostRecord = new CostRecord(23101550, 756.34, "february", "Adm material", "Administrative", Department.IT);
+    cost.addCostRecord = new CostRecord(12564329, 423.15, "June", "Cleaning material", "Administrative", Department.PURCHASING);
   }
   
 
@@ -38,7 +49,7 @@ public class Menu {
       System.out.println("7 - Find Cost Record"); //Encontrar registro de custo
       System.out.println("8 - Verify Total Costs For The Month");//verificar os custos totais do mês
       System.out.println("9 - Verify Total Costs For The Last 3 Months");//verificar os custos totais dos últimos 3 meses
-      System.out.println("10 - Choose functionality1");
+      System.out.println("10 - Average Spending by Department");
       System.out.println("11 - Choose functionality2");
       System.out.println("0 - To Finish Execution");
       System.out.println("");
@@ -119,8 +130,8 @@ public class Menu {
           
         case 5://delete recordg
           System.out.println("Inform the id of the cost record that you want to delete:");
-          int idDelete = in.nextInt;
-
+          int idDelete = in.nextInt();
+          cost.deleteRecord(idDelete);
           break;
 
         case 7://find cost record
@@ -143,9 +154,9 @@ public class Menu {
               System.out.println();
               break;
             case 2:
-              String wantedDescription;
               System.out.print("Please select the description you want to search: ");
-              wantedDescription = in.nextLine();
+              String wantedDescription = in.nextLine();
+              System.out.println(cost.findCostRecordByDescription(wantedDescription));
               System.out.println("\nTotal costs by this description");
 
               System.out.println();
@@ -178,11 +189,22 @@ public class Menu {
           System.out.println();
           break;
         case 9://Verify Total Costs For The Last 3 Months
-
+          int startMonth;
+          System.out.println("Please, select the number of the current month");
+          startMonth = in.nextInt();
+          System.out.println(cost.totalCostsForTheLast3Months(startMonth));
+          System.out.println();
           break;
-        case 10://Choose functionality1
+        case 10://Average Spending by Department / Extra Funcion 1
+          System.out.println();
+          System.out.print("Please, inform the department name:");
+          String departamentToFind = in.next();
+          cost.averageSpendingByDepartment(Department.getDepartment(departamentToFind));
           break;
-        case 11://Choose functionality2
+        case 11://Verify the registered departments / Extra Funcion2
+          System.out.println();
+          System.out.println("The registered departments are: ");
+          Department.verifyRegisteredDepartments();
           break;
 
       }

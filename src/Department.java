@@ -15,6 +15,12 @@ public enum Department {
     return null;
   }
 
+  public static void verifyRegisteredDepartments() {
+    for (Department departmentAux : values()) {
+      System.out.println(departmentAux.value);
+      }
+  }
+
   @Override
   public String toString() {
     return ("Department: " + value);

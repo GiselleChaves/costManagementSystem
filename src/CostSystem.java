@@ -8,6 +8,7 @@ public class CostSystem {
     public static Object out;
     private Employee loggedIn;
     private Employee chosenEmployee = null;
+    public CostRecord addCostRecord;
 
   public CostSystem() {
     employeeList = new ArrayList<>();
@@ -15,12 +16,21 @@ public class CostSystem {
   }
 
   /**
-   * Method of adding employees to the register
+   * Method of adding employees to the list
    * @param employee
    */
   public void addEmployee(Employee employee) {
     this.employeeList.add(employee);
   }
+
+  /**
+   * Method of adding a cost to the list
+   * @param costRecord
+   */
+  public void addCostRecord(CostRecord costRecord){
+    this.costRecordList.add(costRecord);
+  }
+
 
   /**
    * Method show the list of registered employees 
@@ -88,9 +98,9 @@ public class CostSystem {
       CostRecord record = new CostRecord(employeeRegister, value, month, description, category, department);
       costRecordList.add(record);
 
-      System.out.println("Registro de custo adicionado com sucesso.");
+      System.out.println("Cost registration successfully added.");
     } else {
-      System.out.println("Falha ao adicionar registro de custo. Verifique o departamento ou faça login.");
+      System.out.println("Failed to add cost record. Check department or log in.");
     }
   }
 
@@ -152,6 +162,21 @@ public class CostSystem {
         }
       }
       return categoryAux;
+  }
+
+  /**
+   * Method find a cost record with the date received by parameter
+   * @param id
+   * @return the cost record with the category received by parameter
+   */
+  public void findCostRecordByCategory(int id) {
+      for (CostRecord cost : costRecordList) {
+        if (cost.getId() == id) {
+          System.out.println("Cost Record " + id + "was deleted.");
+        }else {
+          System.out.println("Cost Record " + id + "was not found.");
+        }
+      }
   }
   
   /**
@@ -263,7 +288,7 @@ public class CostSystem {
 
     for (Employee employee : employeeList) {
       if (employee.getRegister() == maxRegister) {
-          System.out.println("Funcionário: " + employee.getName() + " - Registro: " + maxRegister + " - Soma dos Custos: " + maxSum);
+          System.out.println("Employee: " + employee.getName() + " - Register: " + maxRegister + " - Sum of costs: " + maxSum);
           break;
       }
     }
@@ -322,8 +347,8 @@ public class CostSystem {
   /**
    * @param departmentToFind
    */
-  public void chooseFunctionality1(Department departmentToFind) {
-    System.out.println("Media De Gasto pelo Departamento");
+  public void averageSpendingByDepartment(Department departmentToFind) {
+    System.out.println("Average Spending by Department");
     int count = 0;
     double total = 0;
     double media = 0;
@@ -344,10 +369,14 @@ public class CostSystem {
     mediaSemMaximoOUminimo = total - min - max;
     mediaSemMaximoOUminimo = mediaSemMaximoOUminimo / count;
     
-    System.out.println("Valor Total Gasto por Departamento : " + total);
-    System.out.println("\nValor Medio de Gasto por Departamento : " + media);
-    System.out.println("\nValor medio descartando o valor max e min de Gasto do Departamento : " + mediaSemMaximoOUminimo);
-    System.out.println("\nValor da maior compra do Departamento : " + max);
-    System.out.println("\nValor da menor compra do Departamento  : " + min);
+    System.out.println("Total Amount Spent by Department : " + total);
+    System.out.println("\nAverage Spending Value by Department : " + media);
+    System.out.println("\nAverage value discarding the max and min value of Department Spending : " + mediaSemMaximoOUminimo);
+    System.out.println("\nValue of the Department's largest purchase : " + max);
+    System.out.println("\nValue of the Department's smallest purchase  : " + min);
   }
+
+  /*public void verifyDepartmentsRegistereds() {
+    for(Department departmentAux : Department.getDepartment(null))
+  }*/
 }
