@@ -28,11 +28,11 @@ This project is being developed for a software configuration management class, t
 
 - [x] Workflow Choice
 - [x] UML
-- [ ] Company Class
-- [ ] Employee Class
-- [ ] Department Class
-- [ ] System Class
-- [ ] Mocks
+- [x] Enum Department 
+- [x] Employee Class
+- [x] Department Class
+- [x] System Class
+- [x] Mocks
 
 ### 🛠️ Open and Run the project
 
